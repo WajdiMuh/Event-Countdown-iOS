@@ -60,6 +60,7 @@ struct EventlistView: View {
                 }
             }
         }
+        .environment(\.editMode, .constant(.inactive))
         .listStyle(.plain)
         .refreshable {
             print("event list")

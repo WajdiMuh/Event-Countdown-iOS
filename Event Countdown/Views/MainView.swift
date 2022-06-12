@@ -15,10 +15,14 @@ struct MainView: View {
             switch(chosenmenu){
                 case "countdown":
                     CountdownView()
+                        .allowsHitTesting(!menuvisible)
                 case "eventlist":
                     EventlistView()
+                        .allowsHitTesting(!menuvisible)
                 default:
                     CountdownView()
+                        .allowsHitTesting(!menuvisible)
+
             }
             VStack{
                 HStack{
