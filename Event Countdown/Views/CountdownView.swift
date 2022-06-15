@@ -36,7 +36,6 @@ struct CountdownView: View {
             .padding(.top,60)
             .listStyle(.plain)
             .refreshable {
-                print("countdown")
             }
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010ADD602856B954001F345F /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010ADD5F2856B954001F345F /* AddEventView.swift */; };
+		010BE2852858780F00B7292E /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BE2842858780F00B7292E /* EventListViewModel.swift */; };
 		0133F57328557BA800CF99F6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F57228557BA800CF99F6 /* Event.swift */; };
 		0148103F28528FF3004BDE8A /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148103E28528FF3004BDE8A /* SideMenuView.swift */; };
 		01A4C9DD285118E30000B1AA /* Event_CountdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4C9DC285118E30000B1AA /* Event_CountdownApp.swift */; };
@@ -16,6 +18,7 @@
 		01A4C9EE285118E30000B1AA /* Event_CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4C9ED285118E30000B1AA /* Event_CountdownTests.swift */; };
 		01A4C9F8285118E30000B1AA /* Event_CountdownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4C9F7285118E30000B1AA /* Event_CountdownUITests.swift */; };
 		01A4C9FA285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4C9F9285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift */; };
+		01A61B96285813E200BA5F0F /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A61B95285813E200BA5F0F /* EditEventView.swift */; };
 		01FBF2EE28513BA70069108D /* EventlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FBF2ED28513BA70069108D /* EventlistView.swift */; };
 		01FC4EB5285132FE00BA83D2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FC4EB4285132FE00BA83D2 /* MainView.swift */; };
 		80553A6501ED777C9B4871BC /* Pods_Event_Countdown_Event_CountdownUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A64A9596383A02B0A8BE4D /* Pods_Event_Countdown_Event_CountdownUITests.framework */; };
@@ -42,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		002619BEB462FAB33BEA8A59 /* Pods-Event CountdownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event CountdownTests.release.xcconfig"; path = "Target Support Files/Pods-Event CountdownTests/Pods-Event CountdownTests.release.xcconfig"; sourceTree = "<group>"; };
+		010ADD5F2856B954001F345F /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		010BE2842858780F00B7292E /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		0133F57228557BA800CF99F6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0148103E28528FF3004BDE8A /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		01A4C9D9285118E30000B1AA /* Event Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Event Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +59,7 @@
 		01A4C9F3285118E30000B1AA /* Event CountdownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Event CountdownUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01A4C9F7285118E30000B1AA /* Event_CountdownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_CountdownUITests.swift; sourceTree = "<group>"; };
 		01A4C9F9285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_CountdownUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		01A61B95285813E200BA5F0F /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
 		01FBF2ED28513BA70069108D /* EventlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventlistView.swift; sourceTree = "<group>"; };
 		01FC4EB4285132FE00BA83D2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4B9C5F11FB4D8BDD1A3956CC /* Pods-Event Countdown-Event CountdownUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event Countdown-Event CountdownUITests.release.xcconfig"; path = "Target Support Files/Pods-Event Countdown-Event CountdownUITests/Pods-Event Countdown-Event CountdownUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 				01FC4EB4285132FE00BA83D2 /* MainView.swift */,
 				01FBF2ED28513BA70069108D /* EventlistView.swift */,
 				0148103E28528FF3004BDE8A /* SideMenuView.swift */,
+				010ADD5F2856B954001F345F /* AddEventView.swift */,
+				01A61B95285813E200BA5F0F /* EditEventView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 		01A4CA0728512E2F0000B1AA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				010BE2842858780F00B7292E /* EventListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -410,9 +419,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				01A4C9DF285118E30000B1AA /* CountdownView.swift in Sources */,
+				01A61B96285813E200BA5F0F /* EditEventView.swift in Sources */,
+				010ADD602856B954001F345F /* AddEventView.swift in Sources */,
 				01FC4EB5285132FE00BA83D2 /* MainView.swift in Sources */,
 				0148103F28528FF3004BDE8A /* SideMenuView.swift in Sources */,
 				01A4C9DD285118E30000B1AA /* Event_CountdownApp.swift in Sources */,
+				010BE2852858780F00B7292E /* EventListViewModel.swift in Sources */,
 				0133F57328557BA800CF99F6 /* Event.swift in Sources */,
 				01FBF2EE28513BA70069108D /* EventlistView.swift in Sources */,
 			);

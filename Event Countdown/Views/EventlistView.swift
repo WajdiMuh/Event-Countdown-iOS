@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct EventlistView: View {
+    @State private var showaddevent = false
+    @State var editedevent:Event?
+    @StateObject var eventlistviewmodel:EventListViewModel = EventListViewModel()
+    static let dateformat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d/MM/yyyy, h:mm a"
+        return formatter
+    }()
     var body: some View {
         List{
             Section(header:
@@ -16,54 +24,62 @@ struct EventlistView: View {
                 .fontWeight(.heavy)
                 .foregroundColor(Color("Flipdarkmode"))
             ) {
-                ForEach((1...3),id: \.self){ event in
+                ForEach(eventlistviewmodel.events){ event in
                     HStack{
                         VStack(alignment: .leading, spacing: 1){
-                            Text("Title")
-                            Text("dd/mm/yyyy, 00:00 am")
+                            Text(event.title)
+                            Text("\(event.date, formatter: Self.dateformat)")
                         }
                         .contentShape(Rectangle())
                         Spacer()
                     }
+                    .swipeActions(edge: .trailing,allowsFullSwipe: false) {
+                        Button {
+                            eventlistviewmodel.deleteevent(deletedevent: event)
+                        } label: {
+                            Label("Delete", systemImage: "minus.circle")
+                        }
+                        .tint(Color.red)
+                        Button {
+                            editedevent = event
+                        } label: {
+                            Label("Edit", systemImage: "slider.horizontal.3")
+                        }
+                        .tint(Color(red: 0.96, green: 0.75, blue: 0.0))
+                    }
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        print("event clicked")
+
                     }
-                }
-                .swipeActions(edge: .trailing,allowsFullSwipe: false) {
-                    Button {
-                        print("delete event")
-                    } label: {
-                        Label("Delete", systemImage: "minus.circle")
-                    }
-                    .tint(Color.red)
-                    Button {
-                        print("edit event")
-                    } label: {
-                        Label("Edit", systemImage: "slider.horizontal.3")
-                    }
-                    .tint(Color(red: 0.96, green: 0.75, blue: 0.0))
                 }
                 
                 HStack{
                     Spacer()
                     Button(action: {
-                        print("add event")
+                        showaddevent.toggle()
                     }) {
                         Image(systemName: "plus.circle")
                             .resizable(resizingMode: .stretch)
                             .foregroundColor(Color.green)
                     }
+                    .sheet(isPresented: $showaddevent) {
+                        AddEventView(eventlistviewmodel: eventlistviewmodel)
+                            }
                     .buttonStyle(PlainButtonStyle())
                     .frame(width: 20, height: 20)
                     Spacer()
                 }
             }
         }
+        .sheet(item: $editedevent, content: { event in
+            EditEventView( eventlistviewmodel: eventlistviewmodel, editedevent: event)
+        })
         .environment(\.editMode, .constant(.inactive))
         .listStyle(.plain)
         .refreshable {
-            print("event list")
+        }
+        .task {
+            await eventlistviewmodel.getallevents()
         }
         .padding(.top,60)
     }
