@@ -9,21 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     @State var menuvisible:Bool = false
+    @State var loading:Bool = true
     @State var chosenmenu:String = "countdown"
     var body: some View {
         ZStack{
-            switch(chosenmenu){
-                case "countdown":
-                    CountdownView()
-                        .allowsHitTesting(!menuvisible)
-                case "eventlist":
-                    EventlistView()
-                        .allowsHitTesting(!menuvisible)
-                default:
-                    CountdownView()
-                        .allowsHitTesting(!menuvisible)
-
-            }
             VStack{
                 HStack{
                     Button(action:{
@@ -37,10 +26,25 @@ struct MainView: View {
                             .foregroundColor(Color("Flipdarkmode"))
                     }
                     .frame(width: 30, height: 20)
-                        .offset(x: 20,y: 40)
+                    .padding([.leading,.top])
                     Spacer()
                 }
-                Spacer()
+                ZStack{
+                    switch(chosenmenu){
+                        case "countdown":
+                        CountdownView(loading: $loading)
+                                .allowsHitTesting(!menuvisible)
+                        case "eventlist":
+                        EventlistView(loading: $loading)
+                                .allowsHitTesting(!menuvisible)
+                        default:
+                        CountdownView(loading: $loading)
+                                .allowsHitTesting(!menuvisible)
+                    }
+                    if(loading){
+                        LoadingView()
+                    }
+                }
             }
             if(menuvisible){
                 SideMenuView(menuvisible: $menuvisible, chosenmenu: $chosenmenu).transition(.move(edge: .leading)).zIndex(1)

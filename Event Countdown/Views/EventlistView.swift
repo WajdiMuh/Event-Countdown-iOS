@@ -10,6 +10,7 @@ import SwiftUI
 struct EventlistView: View {
     @State private var showaddevent = false
     @State var editedevent:Event?
+    @Binding var loading:Bool
     @StateObject var eventlistviewmodel:EventListViewModel = EventListViewModel()
     static let dateformat: DateFormatter = {
         let formatter = DateFormatter()
@@ -77,22 +78,24 @@ struct EventlistView: View {
         .environment(\.editMode, .constant(.inactive))
         .listStyle(.plain)
         .refreshable {
-        }
-        .task {
             await eventlistviewmodel.getallevents()
         }
-        .padding(.top,60)
+        .task {
+            loading = true
+            await eventlistviewmodel.getallevents()
+            loading = false
+        }
     }
 }
 
 struct EventListView_Previews: PreviewProvider {
     static var previews: some View {
-        EventlistView()
+        EventlistView(loading: .constant(false))
             .previewDevice("iPhone 12")
-        EventlistView()
+        EventlistView(loading: .constant(false))
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
-        EventlistView()
+        EventlistView(loading: .constant(false))
             .previewDevice("iPad mini (6th generation)")
             .preferredColorScheme(.dark)
             .previewInterfaceOrientation(.landscapeLeft)

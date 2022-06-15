@@ -16,8 +16,8 @@ struct SideMenuView: View {
                 List {
                     Group{
                         Button("Countdown"){
+                            chosenmenu = "countdown"
                             withAnimation{
-                                chosenmenu = "countdown"
                                 menuvisible.toggle()
                             }
                         }
@@ -25,8 +25,8 @@ struct SideMenuView: View {
                             .frame(height:1)
                             .background(Color("Flipdarkmode"))
                         Button("Event List"){
+                            chosenmenu = "eventlist"
                             withAnimation{
-                                chosenmenu = "eventlist"
                                 menuvisible.toggle()
                             }
                         }

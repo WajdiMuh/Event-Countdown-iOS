@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 class EventListViewModel: ObservableObject{
-    @Published var events:[Event] = [Event(id: 0, title: "test", date: Date.now),Event(id: 1, title: "test 1", date: Date.now.addingTimeInterval(86400))]
+    @Published var events:[Event] = []
     let baseurl:String = "https://eventcountdown.herokuapp.com"
 
     func getallevents() async {
@@ -21,7 +21,7 @@ class EventListViewModel: ObservableObject{
             if let decodedResponse = try? JSONDecoder().decode([Event].self, from: data) {
                 DispatchQueue.main.async{
                     self.events = decodedResponse
-                 }
+                }
             }else{
                 print("decode failed")
             }
