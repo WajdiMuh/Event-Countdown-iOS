@@ -12,6 +12,7 @@ struct MainView: View {
     @State var loading:Bool = true
     @State var chosenmenu:String = "countdown"
     @StateObject var countdownviewmodel:CountdownViewModel = CountdownViewModel()
+    //TODO: Add local notifications
     var body: some View {
         ZStack{
             VStack{

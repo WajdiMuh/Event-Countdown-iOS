@@ -11,7 +11,7 @@ struct CountdownView: View {
     @Binding var loading:Bool
     static let dateformat: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "d/MM/yyyy, h:mm a"
+        formatter.dateFormat = "dd/MM/yyyy, h:mm a"
         return formatter
     }()
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()

@@ -16,7 +16,7 @@ struct EventlistView: View {
     @EnvironmentObject var countdownviewmodel: CountdownViewModel
     static let dateformat: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "d/MM/yyyy, h:mm a"
+        formatter.dateFormat = "dd/MM/yyyy, h:mm a"
         return formatter
     }()
     var body: some View {
@@ -38,7 +38,11 @@ struct EventlistView: View {
                     }
                     .swipeActions(edge: .trailing,allowsFullSwipe: false) {
                         Button {
-                            eventlistviewmodel.deleteevent(deletedevent: event)
+                            loading = true
+                            Task{
+                                await eventlistviewmodel.deleteevent(deletedevent: event)
+                            }
+                            loading  = false
                         } label: {
                             Label("Delete", systemImage: "minus.circle")
                         }
