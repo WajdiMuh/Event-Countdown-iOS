@@ -17,7 +17,7 @@ struct SideMenuView: View {
                     Group{
                         Button("Countdown"){
                             chosenmenu = "countdown"
-                            withAnimation{
+                            withAnimation(.easeIn(duration: 0.3)){
                                 menuvisible.toggle()
                             }
                         }
@@ -26,7 +26,7 @@ struct SideMenuView: View {
                             .background(Color("Flipdarkmode"))
                         Button("Event List"){
                             chosenmenu = "eventlist"
-                            withAnimation{
+                            withAnimation(.easeIn(duration: 0.3)){
                                 menuvisible.toggle()
                             }
                         }
@@ -46,7 +46,7 @@ struct SideMenuView: View {
                         .frame(width: 2, height: UIScreen.main.bounds.size.height, alignment: .trailing)
                         .foregroundColor(Color("Flipdarkmode")), alignment: .trailing)
                 Button(action: {
-                    withAnimation{
+                    withAnimation(.easeIn(duration: 0.3)){
                         menuvisible.toggle()
                     }
                 }, label: {

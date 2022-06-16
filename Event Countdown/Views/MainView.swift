@@ -16,7 +16,7 @@ struct MainView: View {
             VStack{
                 HStack{
                     Button(action:{
-                        withAnimation {
+                        withAnimation(.easeOut(duration: 0.3)){
                             menuvisible.toggle()
                         }
                     })
@@ -46,6 +46,17 @@ struct MainView: View {
                     }
                 }
             }
+            .gesture(
+                DragGesture()
+                    .onEnded({ drag in
+                        if(drag.startLocation.x < 30 && drag.translation.width > 40){
+                            withAnimation(.easeOut(duration: 0.3)){
+                                menuvisible.toggle()
+                            }
+                        }
+                    })
+                
+            )
             if(menuvisible){
                 SideMenuView(menuvisible: $menuvisible, chosenmenu: $chosenmenu).transition(.move(edge: .leading)).zIndex(1)
             }

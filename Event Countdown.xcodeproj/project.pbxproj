@@ -235,8 +235,6 @@
 			dependencies = (
 			);
 			name = "Event Countdown";
-			packageProductDependencies = (
-			);
 			productName = "Event Countdown";
 			productReference = 01A4C9D9285118E30000B1AA /* Event Countdown.app */;
 			productType = "com.apple.product-type.application";
@@ -311,8 +309,6 @@
 				Base,
 			);
 			mainGroup = 01A4C9D0285118E20000B1AA;
-			packageReferences = (
-			);
 			productRefGroup = 01A4C9DA285118E30000B1AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

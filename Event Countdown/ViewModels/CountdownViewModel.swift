@@ -9,6 +9,7 @@ import SwiftUI
 import Foundation
 class CountdownViewModel: ObservableObject{
     @Published var event:Event? = nil
+    @Published var difference:DateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour, .minute,.second], from: Date.now, to: Date.now)
     let baseurl:String = "https://eventcountdown.herokuapp.com"
     
     func getlatestevent() async {
@@ -28,5 +29,9 @@ class CountdownViewModel: ObservableObject{
         } catch {
             print("Invalid data")
         }
+    }
+    
+    func calculatetimediff(){
+        difference = Calendar.current.dateComponents([.year,.month,.day,.hour, .minute,.second], from: Date.now, to: event?.date ?? Date.now)
     }
 }

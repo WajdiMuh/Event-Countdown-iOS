@@ -15,22 +15,37 @@ struct CountdownView: View {
         formatter.dateFormat = "d/MM/yyyy, h:mm a"
         return formatter
     }()
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         GeometryReader { geometry in
             List{
                 HStack{
                     Spacer()
-                    VStack(alignment: .leading,spacing: 10){
-                        if(countdownviewmodel.event != nil){
-                            Text(countdownviewmodel.event!.title)
+                    HStack{
+                        VStack(alignment: .leading,spacing: 10){
+                            Text(countdownviewmodel.event?.title ?? "Title")
                                 .font(.system(size:30))
                                 .fontWeight(.semibold)
                                 .padding(.bottom)
                             Text("Date :")
-                            Text("\(countdownviewmodel.event!.date, formatter: Self.dateformat)")
+                            Text("\(countdownviewmodel.event?.date ?? Date.now, formatter: Self.dateformat)")
                             Text("Time Left :")
-                            Text("Years: 0, Months: 0, Days: 0, Hours: 0, Minutes: 0, Seconds: 0")
+                            Text("Years: \(countdownviewmodel.difference.year ?? 0), Months: \(countdownviewmodel.difference.month ?? 0), Days: \(countdownviewmodel.difference.day ?? 0), Hours: \(countdownviewmodel.difference.hour ?? 0), Minutes: \(countdownviewmodel.difference.minute ?? 0), Seconds: \(countdownviewmodel.difference.second ?? 0)")
+                                .onReceive(timer) { time in
+                                    if(!loading){
+                                        countdownviewmodel.calculatetimediff()
+                                        if(countdownviewmodel.difference.second! <= 0){
+                                            loading = true
+                                            Task{
+                                                await countdownviewmodel.getlatestevent()
+                                            }
+                                            countdownviewmodel.calculatetimediff()
+                                            loading = false
+                                        }
+                                    }
+                                }
                         }
+                        Spacer()
                     }
                     .padding(20)
                     .frame(maxWidth: 400)
@@ -45,10 +60,12 @@ struct CountdownView: View {
             .listStyle(.plain)
             .refreshable {
                 await countdownviewmodel.getlatestevent()
+                countdownviewmodel.calculatetimediff()
             }
             .task {
                 loading = true
                 await countdownviewmodel.getlatestevent()
+                countdownviewmodel.calculatetimediff()
                 loading = false
             }
         }
