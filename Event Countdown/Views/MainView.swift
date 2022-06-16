@@ -47,7 +47,7 @@ struct MainView: View {
                 }
             }
             .gesture(
-                DragGesture()
+                DragGesture(minimumDistance: 30, coordinateSpace: .local)
                     .onEnded({ drag in
                         if(drag.startLocation.x < 30 && drag.translation.width > 40){
                             withAnimation(.easeOut(duration: 0.3)){
@@ -55,7 +55,6 @@ struct MainView: View {
                             }
                         }
                     })
-                
             )
             if(menuvisible){
                 SideMenuView(menuvisible: $menuvisible, chosenmenu: $chosenmenu).transition(.move(edge: .leading)).zIndex(1)
