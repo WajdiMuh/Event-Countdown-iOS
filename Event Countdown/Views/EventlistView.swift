@@ -11,7 +11,9 @@ struct EventlistView: View {
     @State private var showaddevent = false
     @State var editedevent:Event?
     @Binding var loading:Bool
+    @Binding var chosenmenu:String
     @StateObject var eventlistviewmodel:EventListViewModel = EventListViewModel()
+    @EnvironmentObject var countdownviewmodel: CountdownViewModel
     static let dateformat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "d/MM/yyyy, h:mm a"
@@ -50,7 +52,9 @@ struct EventlistView: View {
                     }
                     .contentShape(Rectangle())
                     .onTapGesture {
-
+                        countdownviewmodel.receivedevent = event
+                        countdownviewmodel.event = event
+                        chosenmenu = "countdown"
                     }
                 }
                 
@@ -82,6 +86,7 @@ struct EventlistView: View {
         }
         .task {
             loading = true
+            countdownviewmodel.receivedevent = nil
             await eventlistviewmodel.getallevents()
             loading = false
         }
@@ -90,12 +95,12 @@ struct EventlistView: View {
 
 struct EventListView_Previews: PreviewProvider {
     static var previews: some View {
-        EventlistView(loading: .constant(false))
+        EventlistView(loading: .constant(false), chosenmenu: .constant("eventlist"))
             .previewDevice("iPhone 12")
-        EventlistView(loading: .constant(false))
+        EventlistView(loading: .constant(false), chosenmenu: .constant("eventlist"))
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
-        EventlistView(loading: .constant(false))
+        EventlistView(loading: .constant(false), chosenmenu: .constant("eventlist"))
             .previewDevice("iPad mini (6th generation)")
             .preferredColorScheme(.dark)
             .previewInterfaceOrientation(.landscapeLeft)

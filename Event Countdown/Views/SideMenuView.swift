@@ -10,12 +10,23 @@ import SwiftUI
 struct SideMenuView: View {
     @Binding var menuvisible:Bool
     @Binding var chosenmenu:String
+    @Binding var loading:Bool
+    @EnvironmentObject var countdownviewmodel: CountdownViewModel
     var body: some View {
         GeometryReader { geometry in
             HStack(spacing: 0){
                 List {
                     Group{
                         Button("Countdown"){
+                            if(countdownviewmodel.receivedevent != nil){
+                                countdownviewmodel.receivedevent = nil
+                                Task{
+                                    loading = true
+                                    await countdownviewmodel.getlatestevent()
+                                    countdownviewmodel.calculatetimediff()
+                                    loading = false
+                                }
+                            }
                             chosenmenu = "countdown"
                             withAnimation(.easeIn(duration: 0.3)){
                                 menuvisible.toggle()
@@ -59,9 +70,9 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView(menuvisible: .constant(false), chosenmenu: .constant("countdown"))
+        SideMenuView(menuvisible: .constant(false), chosenmenu: .constant("countdown"), loading: .constant(false))
             .previewDevice("iPhone 12")
-        SideMenuView(menuvisible: .constant(false), chosenmenu: .constant("countdown"))
+        SideMenuView(menuvisible: .constant(false), chosenmenu: .constant("countdown"), loading: .constant(false))
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
     }

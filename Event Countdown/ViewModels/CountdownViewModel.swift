@@ -9,6 +9,7 @@ import SwiftUI
 import Foundation
 class CountdownViewModel: ObservableObject{
     @Published var event:Event? = nil
+    @Published var receivedevent:Event? = nil
     @Published var difference:DateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour, .minute,.second], from: Date.now, to: Date.now)
     let baseurl:String = "https://eventcountdown.herokuapp.com"
     
@@ -22,6 +23,7 @@ class CountdownViewModel: ObservableObject{
             if let decodedResponse = try? JSONDecoder().decode(Event.self, from: data) {
                 DispatchQueue.main.async{
                     self.event = decodedResponse
+                    self.receivedevent = nil
                 }
             }else{
                 print("decode failed")

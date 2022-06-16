@@ -11,6 +11,7 @@ struct MainView: View {
     @State var menuvisible:Bool = false
     @State var loading:Bool = true
     @State var chosenmenu:String = "countdown"
+    @StateObject var countdownviewmodel:CountdownViewModel = CountdownViewModel()
     var body: some View {
         ZStack{
             VStack{
@@ -35,7 +36,7 @@ struct MainView: View {
                         CountdownView(loading: $loading)
                                 .allowsHitTesting(!menuvisible)
                         case "eventlist":
-                        EventlistView(loading: $loading)
+                        EventlistView(loading: $loading, chosenmenu: $chosenmenu)
                                 .allowsHitTesting(!menuvisible)
                         default:
                         CountdownView(loading: $loading)
@@ -45,6 +46,7 @@ struct MainView: View {
                         LoadingView()
                     }
                 }
+                .environmentObject(countdownviewmodel)
             }
             .gesture(
                 DragGesture(minimumDistance: 30, coordinateSpace: .local)
@@ -57,7 +59,7 @@ struct MainView: View {
                     })
             )
             if(menuvisible){
-                SideMenuView(menuvisible: $menuvisible, chosenmenu: $chosenmenu).transition(.move(edge: .leading)).zIndex(1)
+                SideMenuView(menuvisible: $menuvisible, chosenmenu: $chosenmenu,loading: $loading).transition(.move(edge: .leading)).zIndex(1).environmentObject(countdownviewmodel)
             }
         }
     }

@@ -10,7 +10,6 @@ import Foundation
 class EventListViewModel: ObservableObject{
     @Published var events:[Event] = []
     let baseurl:String = "https://eventcountdown.herokuapp.com"
-
     func getallevents() async {
         guard let url = URL(string: baseurl + "/getallevents") else {
             print("Invalid URL")

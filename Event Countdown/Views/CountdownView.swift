@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CountdownView: View {
     @Binding var loading:Bool
-    @StateObject var countdownviewmodel:CountdownViewModel = CountdownViewModel()
     static let dateformat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "d/MM/yyyy, h:mm a"
         return formatter
     }()
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @EnvironmentObject var countdownviewmodel: CountdownViewModel
     var body: some View {
         GeometryReader { geometry in
             List{
@@ -59,14 +59,23 @@ struct CountdownView: View {
             }
             .listStyle(.plain)
             .refreshable {
-                await countdownviewmodel.getlatestevent()
-                countdownviewmodel.calculatetimediff()
+                if(countdownviewmodel.receivedevent == nil){
+                    await countdownviewmodel.getlatestevent()
+                    countdownviewmodel.calculatetimediff()
+                }else{
+                    countdownviewmodel.event = countdownviewmodel.receivedevent
+                    countdownviewmodel.calculatetimediff()
+                }
             }
             .task {
-                loading = true
-                await countdownviewmodel.getlatestevent()
-                countdownviewmodel.calculatetimediff()
-                loading = false
+                if(countdownviewmodel.receivedevent == nil){
+                    loading = true
+                    await countdownviewmodel.getlatestevent()
+                    countdownviewmodel.calculatetimediff()
+                    loading = false
+                }else{
+                    countdownviewmodel.calculatetimediff()
+                }
             }
         }
     }
