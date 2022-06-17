@@ -13,9 +13,11 @@ struct Event_CountdownApp: App {
     init() {
        UITableView.appearance().showsVerticalScrollIndicator = false
     }
+    @StateObject var mainviewviewmodel:MainViewViewModel = MainViewViewModel()
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(mainviewviewmodel)
         }
     }
 }

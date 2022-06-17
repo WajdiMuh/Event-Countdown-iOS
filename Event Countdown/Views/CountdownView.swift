@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountdownView: View {
-    @Binding var loading:Bool
+    @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     static let dateformat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy, h:mm a"
@@ -32,15 +32,15 @@ struct CountdownView: View {
                             Text("Time Left :")
                             Text("Years: \(countdownviewmodel.difference.year ?? 0), Months: \(countdownviewmodel.difference.month ?? 0), Days: \(countdownviewmodel.difference.day ?? 0), Hours: \(countdownviewmodel.difference.hour ?? 0), Minutes: \(countdownviewmodel.difference.minute ?? 0), Seconds: \(countdownviewmodel.difference.second ?? 0)")
                                 .onReceive(timer) { time in
-                                    if(!loading){
+                                    if(!mainviewviewmodel.loading){
                                         countdownviewmodel.calculatetimediff()
                                         if(countdownviewmodel.difference.second! <= 0){
-                                            loading = true
+                                            mainviewviewmodel.loading = true
                                             Task{
                                                 await countdownviewmodel.getlatestevent()
                                             }
                                             countdownviewmodel.calculatetimediff()
-                                            loading = false
+                                            mainviewviewmodel.loading = false
                                         }
                                     }
                                 }
@@ -69,10 +69,10 @@ struct CountdownView: View {
             }
             .task {
                 if(countdownviewmodel.receivedevent == nil){
-                    loading = true
+                    mainviewviewmodel.loading = true
                     await countdownviewmodel.getlatestevent()
                     countdownviewmodel.calculatetimediff()
-                    loading = false
+                    mainviewviewmodel.loading = false
                 }else{
                     countdownviewmodel.calculatetimediff()
                 }
@@ -84,13 +84,13 @@ struct CountdownView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         // iPhone Content View
-        CountdownView(loading: .constant(false))
+        CountdownView()
             .previewDevice("iPhone 12")
-        CountdownView(loading: .constant(false))
+        CountdownView()
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
         // iPad Content View
-        CountdownView(loading: .constant(false))
+        CountdownView()
             .previewInterfaceOrientation(.landscapeLeft)
             .previewDevice("iPad mini (6th generation)")
     }

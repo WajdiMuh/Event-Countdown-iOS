@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    @Binding var menuvisible:Bool
-    @Binding var chosenmenu:String
-    @Binding var loading:Bool
+    @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     @EnvironmentObject var countdownviewmodel: CountdownViewModel
     var body: some View {
         GeometryReader { geometry in
@@ -21,24 +19,24 @@ struct SideMenuView: View {
                             if(countdownviewmodel.receivedevent != nil){
                                 countdownviewmodel.receivedevent = nil
                                 Task{
-                                    loading = true
+                                    mainviewviewmodel.loading = true
                                     await countdownviewmodel.getlatestevent()
                                     countdownviewmodel.calculatetimediff()
-                                    loading = false
+                                    mainviewviewmodel.loading = false
                                 }
                             }
-                            chosenmenu = "countdown"
+                            mainviewviewmodel.chosenmenu = "countdown"
                             withAnimation(.easeIn(duration: 0.3)){
-                                menuvisible.toggle()
+                                mainviewviewmodel.menuvisible.toggle()
                             }
                         }
                         Divider()
                             .frame(height:1)
                             .background(Color("Flipdarkmode"))
                         Button("Event List"){
-                            chosenmenu = "eventlist"
+                            mainviewviewmodel.chosenmenu = "eventlist"
                             withAnimation(.easeIn(duration: 0.3)){
-                                menuvisible.toggle()
+                                mainviewviewmodel.menuvisible.toggle()
                             }
                         }
                     }
@@ -58,7 +56,7 @@ struct SideMenuView: View {
                         .foregroundColor(Color("Flipdarkmode")), alignment: .trailing)
                 Button(action: {
                     withAnimation(.easeIn(duration: 0.3)){
-                        menuvisible.toggle()
+                        mainviewviewmodel.menuvisible.toggle()
                     }
                 }, label: {
                     Text("").frame( maxWidth:.infinity,maxHeight:.infinity)
@@ -70,9 +68,9 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView(menuvisible: .constant(false), chosenmenu: .constant("countdown"), loading: .constant(false))
+        SideMenuView()
             .previewDevice("iPhone 12")
-        SideMenuView(menuvisible: .constant(false), chosenmenu: .constant("countdown"), loading: .constant(false))
+        SideMenuView()
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
     }

@@ -9,9 +9,8 @@ import SwiftUI
 
 struct EventlistView: View {
     @State private var showaddevent = false
+    @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     @State var editedevent:Event?
-    @Binding var loading:Bool
-    @Binding var chosenmenu:String
     @StateObject var eventlistviewmodel:EventListViewModel = EventListViewModel()
     @EnvironmentObject var countdownviewmodel: CountdownViewModel
     static let dateformat: DateFormatter = {
@@ -38,11 +37,11 @@ struct EventlistView: View {
                     }
                     .swipeActions(edge: .trailing,allowsFullSwipe: false) {
                         Button {
-                            loading = true
+                            mainviewviewmodel.loading = true
                             Task{
                                 await eventlistviewmodel.deleteevent(deletedevent: event)
                             }
-                            loading  = false
+                            mainviewviewmodel.loading  = false
                         } label: {
                             Label("Delete", systemImage: "minus.circle")
                         }
@@ -58,7 +57,7 @@ struct EventlistView: View {
                     .onTapGesture {
                         countdownviewmodel.receivedevent = event
                         countdownviewmodel.event = event
-                        chosenmenu = "countdown"
+                        mainviewviewmodel.chosenmenu = "countdown"
                     }
                 }
                 
@@ -89,22 +88,22 @@ struct EventlistView: View {
             await eventlistviewmodel.getallevents()
         }
         .task {
-            loading = true
+            mainviewviewmodel.loading = true
             countdownviewmodel.receivedevent = nil
             await eventlistviewmodel.getallevents()
-            loading = false
+            mainviewviewmodel.loading = false
         }
     }
 }
 
 struct EventListView_Previews: PreviewProvider {
     static var previews: some View {
-        EventlistView(loading: .constant(false), chosenmenu: .constant("eventlist"))
+        EventlistView()
             .previewDevice("iPhone 12")
-        EventlistView(loading: .constant(false), chosenmenu: .constant("eventlist"))
+        EventlistView()
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
-        EventlistView(loading: .constant(false), chosenmenu: .constant("eventlist"))
+        EventlistView()
             .previewDevice("iPad mini (6th generation)")
             .preferredColorScheme(.dark)
             .previewInterfaceOrientation(.landscapeLeft)

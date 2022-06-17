@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var menuvisible:Bool = false
-    @State var loading:Bool = true
-    @State var chosenmenu:String = "countdown"
+    @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     @StateObject var countdownviewmodel:CountdownViewModel = CountdownViewModel()
     //TODO: Add local notifications
     var body: some View {
@@ -19,7 +17,7 @@ struct MainView: View {
                 HStack{
                     Button(action:{
                         withAnimation(.easeOut(duration: 0.3)){
-                            menuvisible.toggle()
+                            mainviewviewmodel.menuvisible.toggle()
                         }
                     })
                     {
@@ -32,18 +30,18 @@ struct MainView: View {
                     Spacer()
                 }
                 ZStack{
-                    switch(chosenmenu){
+                    switch(mainviewviewmodel.chosenmenu){
                         case "countdown":
-                        CountdownView(loading: $loading)
-                                .allowsHitTesting(!menuvisible)
+                        CountdownView()
+                            .allowsHitTesting(!mainviewviewmodel.menuvisible)
                         case "eventlist":
-                        EventlistView(loading: $loading, chosenmenu: $chosenmenu)
-                                .allowsHitTesting(!menuvisible)
+                        EventlistView()
+                            .allowsHitTesting(!mainviewviewmodel.menuvisible)
                         default:
-                        CountdownView(loading: $loading)
-                                .allowsHitTesting(!menuvisible)
+                        CountdownView()
+                            .allowsHitTesting(!mainviewviewmodel.menuvisible)
                     }
-                    if(loading){
+                    if(mainviewviewmodel.loading){
                         LoadingView()
                     }
                 }
@@ -54,13 +52,13 @@ struct MainView: View {
                     .onEnded({ drag in
                         if(drag.startLocation.x < 30 && drag.translation.width > 40){
                             withAnimation(.easeOut(duration: 0.3)){
-                                menuvisible.toggle()
+                                mainviewviewmodel.menuvisible.toggle()
                             }
                         }
                     })
             )
-            if(menuvisible){
-                SideMenuView(menuvisible: $menuvisible, chosenmenu: $chosenmenu,loading: $loading).transition(.move(edge: .leading)).zIndex(1).environmentObject(countdownviewmodel)
+            if(mainviewviewmodel.menuvisible){
+                SideMenuView().transition(.move(edge: .leading)).zIndex(1).environmentObject(countdownviewmodel)
             }
         }
     }

@@ -22,6 +22,8 @@ struct EditEventView: View {
             }
             Spacer()
             TextField("Title",text: $editedevent.title)
+                .disableAutocorrection(true)
+                .submitLabel(.done)
                 .padding(.all,5.0)
                 .border(.secondary)
                 .padding(.horizontal, 20.0)

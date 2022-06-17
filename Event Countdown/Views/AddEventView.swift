@@ -12,6 +12,7 @@ struct AddEventView: View {
     @State var title:String = ""
     @State var date:Date = Date.now
     @ObservedObject var eventlistviewmodel:EventListViewModel
+    @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     var body: some View {
         VStack{
             HStack{
@@ -22,10 +23,14 @@ struct AddEventView: View {
                 Spacer()
             }
             Spacer()
+            //FIXME: fix empty title
             TextField("Title",text: $title)
+                .disableAutocorrection(true)
+                .submitLabel(.done)
                 .padding(.all,5.0)
                 .border(.secondary)
                 .padding(.horizontal, 20.0)
+            //FIXME: fix not selecting date
             DatePicker("Date", selection: $date, in: Date.now...)
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .labelsHidden()
@@ -41,8 +46,12 @@ struct AddEventView: View {
                             .foregroundColor(Color.red)
                     })
                     Button(action: {
-                        eventlistviewmodel.addevent(title: title, date: date)
                         dismiss()
+                        mainviewviewmodel.loading = true
+                        Task{
+                            await eventlistviewmodel.addevent(title: title, date: date)
+                        }
+                        mainviewviewmodel.loading = false
                     }, label: {
                         Text("Add")
                     })
