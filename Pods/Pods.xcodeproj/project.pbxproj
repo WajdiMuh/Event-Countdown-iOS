@@ -7,19 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		195AE1FD9C0F511C3D1FCF576478749D /* Pods-Event Countdown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BAB9C68EBF97AB5921EDCE8FCB693B /* Pods-Event Countdown-dummy.m */; };
+		0BEA866E8079287CDD3053D4C0224D8B /* Pods-Event Countdown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D3C2199D2EEC70B5A66E352391E340FE /* Pods-Event Countdown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FAD42AAB8CC7C6F6A053AD90ECA9B15 /* Pods-Event Countdown-Event CountdownUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D4C94888F904F8280CC4A1DAA6A402D5 /* Pods-Event Countdown-Event CountdownUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F693A34A94159E022D9F57EBEE47F8A /* Pods-Event Countdown-Event CountdownUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F046E606E3E24A3AF20821FB95E5CF3 /* Pods-Event Countdown-Event CountdownUITests-dummy.m */; };
+		30EAE6C0960F14FFE6C44D7CDADB95E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		481F3BE2185022F134DFD932BBD79A40 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EE4529DD380DDB848734F5F22DA8A7 /* BlurView.swift */; };
+		57D7D849A0BAC35247ECCC572890464F /* Pods-Event Countdown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CBA5D54D2F5BDABBA10CC805D4B87 /* Pods-Event Countdown-dummy.m */; };
+		5C7E1FD0252DFA6033E7E08D5984D7B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		5D36035A674C9DDACF30B769B5BEEB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		682284EA5C0AD399AD423E1FC1C61942 /* Pods-Event Countdown-Event CountdownUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 156F73BAE32593883080AD1B9FF39688 /* Pods-Event Countdown-Event CountdownUITests-dummy.m */; };
-		908851AEB84BA9AB780B87052F3C56B6 /* Pods-Event Countdown-Event CountdownUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 464EC8AFDFFDAA5169FDDA2D15D1858B /* Pods-Event Countdown-Event CountdownUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0A21C3DA79C2EBBA2807DE4CFC180C9 /* Pods-Event Countdown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB43E4A06F938EE2F09B2BC182E6AD3 /* Pods-Event Countdown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A15FA4E14A0CFBD1CC01592D5579FA0B /* Pods-Event CountdownTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5F4C7A49F88F8077B1CB01BBB6D0D0 /* Pods-Event CountdownTests-dummy.m */; };
-		AC680E95BADBB10AAD597E188CAAB612 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E586DE1389E4E2B74EE445962251A386 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		F3DFA4930E0434837858B28D7BF4DC2E /* Pods-Event CountdownTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0264C681D7432A8F8DBB8BA8FA2C9CD /* Pods-Event CountdownTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EA08F424ACCD3B0D6222BEF90912961 /* AlertToast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A72B1EA510BE57D5F7D5462B525CE192 /* AlertToast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89068BEF39B046B28FD6DA14201044DE /* AlertToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009B7FB99DE7A16809F476F961B47D6 /* AlertToast.swift */; };
+		8BD4881CE95E3E99DD41A3884204DF1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A15FA4E14A0CFBD1CC01592D5579FA0B /* Pods-Event CountdownTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02576C113A4313CB082C76C8AC310C53 /* Pods-Event CountdownTests-dummy.m */; };
+		ABCC96A3F5A122791DAB8A1CFA9BD50D /* AlertToast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0075DBFB93546C97DFCB77D512412E /* AlertToast-dummy.m */; };
+		DAE75918F0786809E98E99512119DF8D /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC20D7E7126188E5AD30503CED9BA6E /* ActivityIndicator.swift */; };
+		F3DFA4930E0434837858B28D7BF4DC2E /* Pods-Event CountdownTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AF7107F3D99D24C5EA99741789E139 /* Pods-Event CountdownTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		880BB4A7D39641868ECD860E26F3E1AF /* PBXContainerItemProxy */ = {
+		24625DAE9FC9B20711B1C579CB91B0EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD9F52E07CA8CCC9E5112A7D8C1CE821;
+			remoteInfo = AlertToast;
+		};
+		6915BB414E69745CFE80FEB05308657D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD9F52E07CA8CCC9E5112A7D8C1CE821;
+			remoteInfo = AlertToast;
+		};
+		D19EF84E674F098625EC50B7AFC013DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -29,43 +49,64 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		156F73BAE32593883080AD1B9FF39688 /* Pods-Event Countdown-Event CountdownUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Event Countdown-Event CountdownUITests-dummy.m"; sourceTree = "<group>"; };
-		2414562116F1C5D4E1ABB2517B70250F /* Pods-Event CountdownTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Event CountdownTests.modulemap"; sourceTree = "<group>"; };
-		3657CF89247D64FA834BF5ED6AE0DC5B /* Pods-Event Countdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Countdown.release.xcconfig"; sourceTree = "<group>"; };
-		396118BB2AE0E70B2CEEAFBD10221018 /* Pods-Event CountdownTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event CountdownTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		39A82DD2740A1F8A9C85E7623A21741A /* Pods-Event Countdown-Event CountdownUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Countdown-Event CountdownUITests.release.xcconfig"; sourceTree = "<group>"; };
-		45636D957D1FDFFF64D44C75B566579A /* Pods-Event Countdown-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Event Countdown-acknowledgements.markdown"; sourceTree = "<group>"; };
-		464EC8AFDFFDAA5169FDDA2D15D1858B /* Pods-Event Countdown-Event CountdownUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Event Countdown-Event CountdownUITests-umbrella.h"; sourceTree = "<group>"; };
-		58BAB9C68EBF97AB5921EDCE8FCB693B /* Pods-Event Countdown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Event Countdown-dummy.m"; sourceTree = "<group>"; };
-		6F64539802B75BDA3B4DB84770CC9356 /* Pods-Event CountdownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event CountdownTests.debug.xcconfig"; sourceTree = "<group>"; };
+		01AF7107F3D99D24C5EA99741789E139 /* Pods-Event CountdownTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Event CountdownTests-umbrella.h"; sourceTree = "<group>"; };
+		02576C113A4313CB082C76C8AC310C53 /* Pods-Event CountdownTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Event CountdownTests-dummy.m"; sourceTree = "<group>"; };
+		03410E326D96C07780F9DAE2252FFA15 /* AlertToast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertToast-prefix.pch"; sourceTree = "<group>"; };
+		07E06C6A8F29B56B1490C705C34D4592 /* Pods-Event CountdownTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Event CountdownTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0DA139B19EBF5C070C7CC0AAC856FEEB /* Pods-Event CountdownTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event CountdownTests-Info.plist"; sourceTree = "<group>"; };
+		0EEF6D3B766D4F90ED6B1C407BE25FC4 /* AlertToast.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlertToast.modulemap; sourceTree = "<group>"; };
+		0F046E606E3E24A3AF20821FB95E5CF3 /* Pods-Event Countdown-Event CountdownUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Event Countdown-Event CountdownUITests-dummy.m"; sourceTree = "<group>"; };
+		1B82508DF6F01446B9A036AF8377FBA3 /* Pods-Event Countdown-Event CountdownUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Countdown-Event CountdownUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C4585C83DD95B0DF464196BF2302E8B /* Pods-Event Countdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Countdown.debug.xcconfig"; sourceTree = "<group>"; };
+		26EE4529DD380DDB848734F5F22DA8A7 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Sources/AlertToast/BlurView.swift; sourceTree = "<group>"; };
+		29265DB86F7F8BF82AF2F98D9A49F0A2 /* Pods-Event Countdown-Event CountdownUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Event Countdown-Event CountdownUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		39A55521963E7D5050D81155C8567055 /* AlertToast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlertToast-Info.plist"; sourceTree = "<group>"; };
+		3F3A182FDD49D68D3C4757DA5917C8DC /* Pods-Event Countdown-Event CountdownUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Countdown-Event CountdownUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4009B7FB99DE7A16809F476F961B47D6 /* AlertToast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertToast.swift; path = Sources/AlertToast/AlertToast.swift; sourceTree = "<group>"; };
+		488E24E0BEE11CAA89ABEE33C3403857 /* Pods-Event Countdown-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Event Countdown-frameworks.sh"; sourceTree = "<group>"; };
+		4A96B2578B2F0B1800DDAA2633378295 /* Pods-Event Countdown-Event CountdownUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Countdown-Event CountdownUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4DC67367C54DDF706E83936FD76F0D1D /* Pods-Event Countdown-Event CountdownUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Event Countdown-Event CountdownUITests-frameworks.sh"; sourceTree = "<group>"; };
+		541A1F4DA3C8951486244DAA2639279B /* Pods-Event Countdown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Countdown-Info.plist"; sourceTree = "<group>"; };
+		6926453F8FACD3288F76A0E9B188BEB6 /* Pods-Event Countdown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Event Countdown.modulemap"; sourceTree = "<group>"; };
+		7250B63B8934FC0F93100C8AE9B6C890 /* Pods-Event Countdown-Event CountdownUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Countdown-Event CountdownUITests-Info.plist"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		75E5FF975CC4E93DC6B89EA83137AA37 /* Pods-Event Countdown-Event CountdownUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Countdown-Event CountdownUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		798EEB9F0492475EF294148F1FF12AF8 /* Pods-Event CountdownTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Event CountdownTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8DF3B5AC5467E04303B1969926C3C3EE /* Pods-Event Countdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Countdown.debug.xcconfig"; sourceTree = "<group>"; };
-		9990CA51A5B858D7E243E2270DA774EA /* Pods-Event Countdown-Event CountdownUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Event Countdown-Event CountdownUITests.modulemap"; sourceTree = "<group>"; };
-		9BB43E4A06F938EE2F09B2BC182E6AD3 /* Pods-Event Countdown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Event Countdown-umbrella.h"; sourceTree = "<group>"; };
+		7FC20D7E7126188E5AD30503CED9BA6E /* ActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = Sources/AlertToast/ActivityIndicator.swift; sourceTree = "<group>"; };
+		8A1CBA5D54D2F5BDABBA10CC805D4B87 /* Pods-Event Countdown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Event Countdown-dummy.m"; sourceTree = "<group>"; };
+		925975F27893FB1F7B11F335AAEED30B /* AlertToast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertToast.debug.xcconfig; sourceTree = "<group>"; };
+		9BF630ED8857C4DFFFC84D8FAA3A8BE7 /* AlertToast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertToast.release.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0264C681D7432A8F8DBB8BA8FA2C9CD /* Pods-Event CountdownTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Event CountdownTests-umbrella.h"; sourceTree = "<group>"; };
-		AEB3EB242FCF57551B56AC7CF3332035 /* Pods-Event Countdown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Countdown-Info.plist"; sourceTree = "<group>"; };
-		B4B6CFDAEAC732FDCA4A0552B104765C /* Pods-Event Countdown-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Countdown-acknowledgements.plist"; sourceTree = "<group>"; };
-		B779C7D05B8DC5D644E84D6EBA5562C4 /* Pods-Event Countdown-Event CountdownUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Countdown-Event CountdownUITests-Info.plist"; sourceTree = "<group>"; };
+		A50F036BE0BFE618C67FA52B80377F3B /* AlertToast */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlertToast; path = AlertToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D4B763B76E707B9C207EA0B6232D05 /* Pods-Event CountdownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event CountdownTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A72B1EA510BE57D5F7D5462B525CE192 /* AlertToast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertToast-umbrella.h"; sourceTree = "<group>"; };
+		C66F88703CFE7A43DF03990B174AB625 /* Pods-Event CountdownTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event CountdownTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		CAEA0E9014D506D355187D009A057ABB /* Pods-Event CountdownTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Event CountdownTests"; path = Pods_Event_CountdownTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDBEF05BB31FC5F65D82AF3682C53698 /* Pods-Event Countdown-Event CountdownUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Event Countdown-Event CountdownUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CF5F4C7A49F88F8077B1CB01BBB6D0D0 /* Pods-Event CountdownTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Event CountdownTests-dummy.m"; sourceTree = "<group>"; };
-		E7F41AC2994A6061FFABF851D506331D /* Pods-Event Countdown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Event Countdown.modulemap"; sourceTree = "<group>"; };
+		CE0075DBFB93546C97DFCB77D512412E /* AlertToast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlertToast-dummy.m"; sourceTree = "<group>"; };
+		D210CF31A64E790803A10EFF68822ED9 /* Pods-Event Countdown-Event CountdownUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Event Countdown-Event CountdownUITests.modulemap"; sourceTree = "<group>"; };
+		D29728AF2931EB2F3723DF52FA37336E /* Pods-Event Countdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Countdown.release.xcconfig"; sourceTree = "<group>"; };
+		D3C2199D2EEC70B5A66E352391E340FE /* Pods-Event Countdown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Event Countdown-umbrella.h"; sourceTree = "<group>"; };
+		D408F685DA0A92AF812770A457245318 /* Pods-Event CountdownTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Event CountdownTests.modulemap"; sourceTree = "<group>"; };
+		D4780FD1674B2D56C5F7FB31FD28B285 /* Pods-Event Countdown-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Event Countdown-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D4C94888F904F8280CC4A1DAA6A402D5 /* Pods-Event Countdown-Event CountdownUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Event Countdown-Event CountdownUITests-umbrella.h"; sourceTree = "<group>"; };
+		DB6A76372923291768918FF5A9A12D00 /* Pods-Event Countdown-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Countdown-acknowledgements.plist"; sourceTree = "<group>"; };
+		DC38A1C46579C104534DDA61025749CC /* Pods-Event CountdownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event CountdownTests.release.xcconfig"; sourceTree = "<group>"; };
 		E80AFC642A3480FC017352EBD71C5847 /* Pods-Event Countdown-Event CountdownUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Event Countdown-Event CountdownUITests"; path = Pods_Event_Countdown_Event_CountdownUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EECDE67070E088760B9C195D30930225 /* Pods-Event CountdownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event CountdownTests.release.xcconfig"; sourceTree = "<group>"; };
-		F46DE9C044E96E9218DB6AFBBA7C2343 /* Pods-Event Countdown-Event CountdownUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Countdown-Event CountdownUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F9A51560A190A1CDA3B819C079ABEE23 /* Pods-Event CountdownTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event CountdownTests-Info.plist"; sourceTree = "<group>"; };
 		FA5587D9755856B555D96833BBB762A5 /* Pods-Event Countdown */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Event Countdown"; path = Pods_Event_Countdown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		39472B4852E70CEC8E1EFD832211EAC0 /* Frameworks */ = {
+		28837CB46B720A95C196F99328B0596E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E586DE1389E4E2B74EE445962251A386 /* Foundation.framework in Frameworks */,
+				8BD4881CE95E3E99DD41A3884204DF1D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		347779031190EDC071A4F2E9073598F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C7E1FD0252DFA6033E7E08D5984D7B0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,17 +118,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E087F69C353450F40AE46685708586D3 /* Frameworks */ = {
+		ED191FACACDE4C54D16221C733C6F0A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC680E95BADBB10AAD597E188CAAB612 /* Foundation.framework in Frameworks */,
+				30EAE6C0960F14FFE6C44D7CDADB95E4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03CD1C072E1420B9AEA817802B114D48 /* AlertToast */ = {
+			isa = PBXGroup;
+			children = (
+				7FC20D7E7126188E5AD30503CED9BA6E /* ActivityIndicator.swift */,
+				4009B7FB99DE7A16809F476F961B47D6 /* AlertToast.swift */,
+				26EE4529DD380DDB848734F5F22DA8A7 /* BlurView.swift */,
+				F039A6BEEB2E3032F0645E426142BE9E /* Support Files */,
+			);
+			name = AlertToast;
+			path = AlertToast;
+			sourceTree = "<group>";
+		};
+		4B79A4B705D4DE79F837213BAECB4C3B /* Pods-Event Countdown-Event CountdownUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D210CF31A64E790803A10EFF68822ED9 /* Pods-Event Countdown-Event CountdownUITests.modulemap */,
+				29265DB86F7F8BF82AF2F98D9A49F0A2 /* Pods-Event Countdown-Event CountdownUITests-acknowledgements.markdown */,
+				4A96B2578B2F0B1800DDAA2633378295 /* Pods-Event Countdown-Event CountdownUITests-acknowledgements.plist */,
+				0F046E606E3E24A3AF20821FB95E5CF3 /* Pods-Event Countdown-Event CountdownUITests-dummy.m */,
+				4DC67367C54DDF706E83936FD76F0D1D /* Pods-Event Countdown-Event CountdownUITests-frameworks.sh */,
+				7250B63B8934FC0F93100C8AE9B6C890 /* Pods-Event Countdown-Event CountdownUITests-Info.plist */,
+				D4C94888F904F8280CC4A1DAA6A402D5 /* Pods-Event Countdown-Event CountdownUITests-umbrella.h */,
+				3F3A182FDD49D68D3C4757DA5917C8DC /* Pods-Event Countdown-Event CountdownUITests.debug.xcconfig */,
+				1B82508DF6F01446B9A036AF8377FBA3 /* Pods-Event Countdown-Event CountdownUITests.release.xcconfig */,
+			);
+			name = "Pods-Event Countdown-Event CountdownUITests";
+			path = "Target Support Files/Pods-Event Countdown-Event CountdownUITests";
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,36 +166,55 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		702240F3D0C6D89437E9D7A4052EDEAF /* Pods-Event Countdown-Event CountdownUITests */ = {
+		6CD932CA456F3B46276E011B0959230E /* Pods-Event CountdownTests */ = {
 			isa = PBXGroup;
 			children = (
-				9990CA51A5B858D7E243E2270DA774EA /* Pods-Event Countdown-Event CountdownUITests.modulemap */,
-				CDBEF05BB31FC5F65D82AF3682C53698 /* Pods-Event Countdown-Event CountdownUITests-acknowledgements.markdown */,
-				F46DE9C044E96E9218DB6AFBBA7C2343 /* Pods-Event Countdown-Event CountdownUITests-acknowledgements.plist */,
-				156F73BAE32593883080AD1B9FF39688 /* Pods-Event Countdown-Event CountdownUITests-dummy.m */,
-				B779C7D05B8DC5D644E84D6EBA5562C4 /* Pods-Event Countdown-Event CountdownUITests-Info.plist */,
-				464EC8AFDFFDAA5169FDDA2D15D1858B /* Pods-Event Countdown-Event CountdownUITests-umbrella.h */,
-				75E5FF975CC4E93DC6B89EA83137AA37 /* Pods-Event Countdown-Event CountdownUITests.debug.xcconfig */,
-				39A82DD2740A1F8A9C85E7623A21741A /* Pods-Event Countdown-Event CountdownUITests.release.xcconfig */,
-			);
-			name = "Pods-Event Countdown-Event CountdownUITests";
-			path = "Target Support Files/Pods-Event Countdown-Event CountdownUITests";
-			sourceTree = "<group>";
-		};
-		9570BFD8910B17CD50BEA29227BD5760 /* Pods-Event CountdownTests */ = {
-			isa = PBXGroup;
-			children = (
-				2414562116F1C5D4E1ABB2517B70250F /* Pods-Event CountdownTests.modulemap */,
-				798EEB9F0492475EF294148F1FF12AF8 /* Pods-Event CountdownTests-acknowledgements.markdown */,
-				396118BB2AE0E70B2CEEAFBD10221018 /* Pods-Event CountdownTests-acknowledgements.plist */,
-				CF5F4C7A49F88F8077B1CB01BBB6D0D0 /* Pods-Event CountdownTests-dummy.m */,
-				F9A51560A190A1CDA3B819C079ABEE23 /* Pods-Event CountdownTests-Info.plist */,
-				A0264C681D7432A8F8DBB8BA8FA2C9CD /* Pods-Event CountdownTests-umbrella.h */,
-				6F64539802B75BDA3B4DB84770CC9356 /* Pods-Event CountdownTests.debug.xcconfig */,
-				EECDE67070E088760B9C195D30930225 /* Pods-Event CountdownTests.release.xcconfig */,
+				D408F685DA0A92AF812770A457245318 /* Pods-Event CountdownTests.modulemap */,
+				07E06C6A8F29B56B1490C705C34D4592 /* Pods-Event CountdownTests-acknowledgements.markdown */,
+				C66F88703CFE7A43DF03990B174AB625 /* Pods-Event CountdownTests-acknowledgements.plist */,
+				02576C113A4313CB082C76C8AC310C53 /* Pods-Event CountdownTests-dummy.m */,
+				0DA139B19EBF5C070C7CC0AAC856FEEB /* Pods-Event CountdownTests-Info.plist */,
+				01AF7107F3D99D24C5EA99741789E139 /* Pods-Event CountdownTests-umbrella.h */,
+				A6D4B763B76E707B9C207EA0B6232D05 /* Pods-Event CountdownTests.debug.xcconfig */,
+				DC38A1C46579C104534DDA61025749CC /* Pods-Event CountdownTests.release.xcconfig */,
 			);
 			name = "Pods-Event CountdownTests";
 			path = "Target Support Files/Pods-Event CountdownTests";
+			sourceTree = "<group>";
+		};
+		AE43D576EE717C1F7506AD6C5DD1DE84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				03CD1C072E1420B9AEA817802B114D48 /* AlertToast */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF5E2E7FD8F9720CDC7CB9FA7D39C69F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBCACC51D56959760F99996108D5589E /* Pods-Event Countdown */,
+				4B79A4B705D4DE79F837213BAECB4C3B /* Pods-Event Countdown-Event CountdownUITests */,
+				6CD932CA456F3B46276E011B0959230E /* Pods-Event CountdownTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BBCACC51D56959760F99996108D5589E /* Pods-Event Countdown */ = {
+			isa = PBXGroup;
+			children = (
+				6926453F8FACD3288F76A0E9B188BEB6 /* Pods-Event Countdown.modulemap */,
+				D4780FD1674B2D56C5F7FB31FD28B285 /* Pods-Event Countdown-acknowledgements.markdown */,
+				DB6A76372923291768918FF5A9A12D00 /* Pods-Event Countdown-acknowledgements.plist */,
+				8A1CBA5D54D2F5BDABBA10CC805D4B87 /* Pods-Event Countdown-dummy.m */,
+				488E24E0BEE11CAA89ABEE33C3403857 /* Pods-Event Countdown-frameworks.sh */,
+				541A1F4DA3C8951486244DAA2639279B /* Pods-Event Countdown-Info.plist */,
+				D3C2199D2EEC70B5A66E352391E340FE /* Pods-Event Countdown-umbrella.h */,
+				1C4585C83DD95B0DF464196BF2302E8B /* Pods-Event Countdown.debug.xcconfig */,
+				D29728AF2931EB2F3723DF52FA37336E /* Pods-Event Countdown.release.xcconfig */,
+			);
+			name = "Pods-Event Countdown";
+			path = "Target Support Files/Pods-Event Countdown";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -133,8 +222,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				F352BC6485BCA2F81DB0F4E81FA85572 /* Products */,
-				E0E2EB583A0279A8224427E61A1A76C4 /* Targets Support Files */,
+				AE43D576EE717C1F7506AD6C5DD1DE84 /* Pods */,
+				ED8CE3CD229F330617CACA779C734631 /* Products */,
+				AF5E2E7FD8F9720CDC7CB9FA7D39C69F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,35 +236,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DA526E9436D5D013F17FE500193DE06D /* Pods-Event Countdown */ = {
+		ED8CE3CD229F330617CACA779C734631 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7F41AC2994A6061FFABF851D506331D /* Pods-Event Countdown.modulemap */,
-				45636D957D1FDFFF64D44C75B566579A /* Pods-Event Countdown-acknowledgements.markdown */,
-				B4B6CFDAEAC732FDCA4A0552B104765C /* Pods-Event Countdown-acknowledgements.plist */,
-				58BAB9C68EBF97AB5921EDCE8FCB693B /* Pods-Event Countdown-dummy.m */,
-				AEB3EB242FCF57551B56AC7CF3332035 /* Pods-Event Countdown-Info.plist */,
-				9BB43E4A06F938EE2F09B2BC182E6AD3 /* Pods-Event Countdown-umbrella.h */,
-				8DF3B5AC5467E04303B1969926C3C3EE /* Pods-Event Countdown.debug.xcconfig */,
-				3657CF89247D64FA834BF5ED6AE0DC5B /* Pods-Event Countdown.release.xcconfig */,
-			);
-			name = "Pods-Event Countdown";
-			path = "Target Support Files/Pods-Event Countdown";
-			sourceTree = "<group>";
-		};
-		E0E2EB583A0279A8224427E61A1A76C4 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DA526E9436D5D013F17FE500193DE06D /* Pods-Event Countdown */,
-				702240F3D0C6D89437E9D7A4052EDEAF /* Pods-Event Countdown-Event CountdownUITests */,
-				9570BFD8910B17CD50BEA29227BD5760 /* Pods-Event CountdownTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F352BC6485BCA2F81DB0F4E81FA85572 /* Products */ = {
-			isa = PBXGroup;
-			children = (
+				A50F036BE0BFE618C67FA52B80377F3B /* AlertToast */,
 				FA5587D9755856B555D96833BBB762A5 /* Pods-Event Countdown */,
 				E80AFC642A3480FC017352EBD71C5847 /* Pods-Event Countdown-Event CountdownUITests */,
 				CAEA0E9014D506D355187D009A057ABB /* Pods-Event CountdownTests */,
@@ -182,22 +247,45 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F039A6BEEB2E3032F0645E426142BE9E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0EEF6D3B766D4F90ED6B1C407BE25FC4 /* AlertToast.modulemap */,
+				CE0075DBFB93546C97DFCB77D512412E /* AlertToast-dummy.m */,
+				39A55521963E7D5050D81155C8567055 /* AlertToast-Info.plist */,
+				03410E326D96C07780F9DAE2252FFA15 /* AlertToast-prefix.pch */,
+				A72B1EA510BE57D5F7D5462B525CE192 /* AlertToast-umbrella.h */,
+				925975F27893FB1F7B11F335AAEED30B /* AlertToast.debug.xcconfig */,
+				9BF630ED8857C4DFFFC84D8FAA3A8BE7 /* AlertToast.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AlertToast";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A1858735BAB1E3A59366C5A8FF543BF0 /* Headers */ = {
+		3428F96866FB5E974FF21109C76842D5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0A21C3DA79C2EBBA2807DE4CFC180C9 /* Pods-Event Countdown-umbrella.h in Headers */,
+				0BEA866E8079287CDD3053D4C0224D8B /* Pods-Event Countdown-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF734793A71D1F0D0BA5BE3755B4F2D3 /* Headers */ = {
+		44A84C91FAC6DAD40F1A43DEF8DDCA81 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				908851AEB84BA9AB780B87052F3C56B6 /* Pods-Event Countdown-Event CountdownUITests-umbrella.h in Headers */,
+				6EA08F424ACCD3B0D6222BEF90912961 /* AlertToast-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4705CBC974C3F189CF70569CF6F0E191 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FAD42AAB8CC7C6F6A053AD90ECA9B15 /* Pods-Event Countdown-Event CountdownUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,16 +302,17 @@
 /* Begin PBXNativeTarget section */
 		01707D93BD4027175C9B1313C87413B0 /* Pods-Event Countdown-Event CountdownUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90B82C733BF25BD3A75DEA42ACD417E0 /* Build configuration list for PBXNativeTarget "Pods-Event Countdown-Event CountdownUITests" */;
+			buildConfigurationList = C0EA59FB059B1E06332E560A6022A27E /* Build configuration list for PBXNativeTarget "Pods-Event Countdown-Event CountdownUITests" */;
 			buildPhases = (
-				DF734793A71D1F0D0BA5BE3755B4F2D3 /* Headers */,
-				D05C1D0A5C4708D06265F6CA14CA5F16 /* Sources */,
-				39472B4852E70CEC8E1EFD832211EAC0 /* Frameworks */,
-				4C769E6D86CD8F8B5706F752B9C01B70 /* Resources */,
+				4705CBC974C3F189CF70569CF6F0E191 /* Headers */,
+				F25FA9A083F8545265C429D0987FD1A5 /* Sources */,
+				28837CB46B720A95C196F99328B0596E /* Frameworks */,
+				DD9AD1199E87DDAB5D51AAD9EBC34CC5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A04342DA2C7AC4B6A91D776D4A7A8DC6 /* PBXTargetDependency */,
 			);
 			name = "Pods-Event Countdown-Event CountdownUITests";
 			productName = Pods_Event_Countdown_Event_CountdownUITests;
@@ -232,16 +321,17 @@
 		};
 		37D78975CEB269C43114BC88F0FD6D5D /* Pods-Event Countdown */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA0705310661EF9A270A40D540E74325 /* Build configuration list for PBXNativeTarget "Pods-Event Countdown" */;
+			buildConfigurationList = 4AFDD672DB74AB9BB5B3224ED9DB982B /* Build configuration list for PBXNativeTarget "Pods-Event Countdown" */;
 			buildPhases = (
-				A1858735BAB1E3A59366C5A8FF543BF0 /* Headers */,
-				A9463D4104C09E0E300AF0E96B6E29CF /* Sources */,
-				E087F69C353450F40AE46685708586D3 /* Frameworks */,
-				82E3928A6D98EB7CE33F941C4650CEF9 /* Resources */,
+				3428F96866FB5E974FF21109C76842D5 /* Headers */,
+				8BBACE98F369062B1990042BC6D77B9E /* Sources */,
+				ED191FACACDE4C54D16221C733C6F0A9 /* Frameworks */,
+				4FADFF6CFFC2E420B71D0C958699FAC9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EC41C648558E723323B972D30578226A /* PBXTargetDependency */,
 			);
 			name = "Pods-Event Countdown";
 			productName = Pods_Event_Countdown;
@@ -260,11 +350,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				27B25EA783A126CF649D591D4A633035 /* PBXTargetDependency */,
+				A5C29B0260AEC54D40F89C993BE9DA0E /* PBXTargetDependency */,
 			);
 			name = "Pods-Event CountdownTests";
 			productName = Pods_Event_CountdownTests;
 			productReference = CAEA0E9014D506D355187D009A057ABB /* Pods-Event CountdownTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		BD9F52E07CA8CCC9E5112A7D8C1CE821 /* AlertToast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 058CF4B13CD220E4F99FC2BAEA8B57E3 /* Build configuration list for PBXNativeTarget "AlertToast" */;
+			buildPhases = (
+				44A84C91FAC6DAD40F1A43DEF8DDCA81 /* Headers */,
+				E433AAB9933A759630771F55C9A60EBF /* Sources */,
+				347779031190EDC071A4F2E9073598F0 /* Frameworks */,
+				59FC49F4186BE3B64D14966824FEF367 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlertToast;
+			productName = AlertToast;
+			productReference = A50F036BE0BFE618C67FA52B80377F3B /* AlertToast */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -285,10 +393,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F352BC6485BCA2F81DB0F4E81FA85572 /* Products */;
+			productRefGroup = ED8CE3CD229F330617CACA779C734631 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				BD9F52E07CA8CCC9E5112A7D8C1CE821 /* AlertToast */,
 				37D78975CEB269C43114BC88F0FD6D5D /* Pods-Event Countdown */,
 				01707D93BD4027175C9B1313C87413B0 /* Pods-Event Countdown-Event CountdownUITests */,
 				914B3C9A00944C430BFB4FCA0E9B5B15 /* Pods-Event CountdownTests */,
@@ -297,14 +406,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4C769E6D86CD8F8B5706F752B9C01B70 /* Resources */ = {
+		4FADFF6CFFC2E420B71D0C958699FAC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82E3928A6D98EB7CE33F941C4650CEF9 /* Resources */ = {
+		59FC49F4186BE3B64D14966824FEF367 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -318,9 +427,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD9AD1199E87DDAB5D51AAD9EBC34CC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8BBACE98F369062B1990042BC6D77B9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D7D849A0BAC35247ECCC572890464F /* Pods-Event Countdown-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		977D19EF9C00EE594EE1EA573BD6ABF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,34 +453,123 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9463D4104C09E0E300AF0E96B6E29CF /* Sources */ = {
+		E433AAB9933A759630771F55C9A60EBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				195AE1FD9C0F511C3D1FCF576478749D /* Pods-Event Countdown-dummy.m in Sources */,
+				DAE75918F0786809E98E99512119DF8D /* ActivityIndicator.swift in Sources */,
+				89068BEF39B046B28FD6DA14201044DE /* AlertToast.swift in Sources */,
+				ABCC96A3F5A122791DAB8A1CFA9BD50D /* AlertToast-dummy.m in Sources */,
+				481F3BE2185022F134DFD932BBD79A40 /* BlurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D05C1D0A5C4708D06265F6CA14CA5F16 /* Sources */ = {
+		F25FA9A083F8545265C429D0987FD1A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				682284EA5C0AD399AD423E1FC1C61942 /* Pods-Event Countdown-Event CountdownUITests-dummy.m in Sources */,
+				2F693A34A94159E022D9F57EBEE47F8A /* Pods-Event Countdown-Event CountdownUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27B25EA783A126CF649D591D4A633035 /* PBXTargetDependency */ = {
+		A04342DA2C7AC4B6A91D776D4A7A8DC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlertToast;
+			target = BD9F52E07CA8CCC9E5112A7D8C1CE821 /* AlertToast */;
+			targetProxy = 24625DAE9FC9B20711B1C579CB91B0EC /* PBXContainerItemProxy */;
+		};
+		A5C29B0260AEC54D40F89C993BE9DA0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Event Countdown";
 			target = 37D78975CEB269C43114BC88F0FD6D5D /* Pods-Event Countdown */;
-			targetProxy = 880BB4A7D39641868ECD860E26F3E1AF /* PBXContainerItemProxy */;
+			targetProxy = D19EF84E674F098625EC50B7AFC013DB /* PBXContainerItemProxy */;
+		};
+		EC41C648558E723323B972D30578226A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlertToast;
+			target = BD9F52E07CA8CCC9E5112A7D8C1CE821 /* AlertToast */;
+			targetProxy = 6915BB414E69745CFE80FEB05308657D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		01887C66D0156CF883E61E4156D2EB68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B82508DF6F01446B9A036AF8377FBA3 /* Pods-Event Countdown-Event CountdownUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Event Countdown-Event CountdownUITests/Pods-Event Countdown-Event CountdownUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Event Countdown-Event CountdownUITests/Pods-Event Countdown-Event CountdownUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		048AFB9BE277D96ECBD14AF2F4DFDCB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BF630ED8857C4DFFFC84D8FAA3A8BE7 /* AlertToast.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AlertToast/AlertToast-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AlertToast/AlertToast-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AlertToast/AlertToast.modulemap";
+				PRODUCT_MODULE_NAME = AlertToast;
+				PRODUCT_NAME = AlertToast;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		09909ECBA13E8F70A928465E7F7A9A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -423,9 +636,9 @@
 			};
 			name = Debug;
 		};
-		2AB4EDAAD4A02561DBBE0874917ACDF2 /* Release */ = {
+		1B66E6B4E45BCCCCDDB51866E3A8FE98 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39A82DD2740A1F8A9C85E7623A21741A /* Pods-Event Countdown-Event CountdownUITests.release.xcconfig */;
+			baseConfigurationReference = 3F3A182FDD49D68D3C4757DA5917C8DC /* Pods-Event Countdown-Event CountdownUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -455,11 +668,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		2DE0D8898245310716431F92FA4989FF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -525,7 +737,7 @@
 		};
 		316C81B6219BC37A91AFDBFCF9D65C7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EECDE67070E088760B9C195D30930225 /* Pods-Event CountdownTests.release.xcconfig */;
+			baseConfigurationReference = DC38A1C46579C104534DDA61025749CC /* Pods-Event CountdownTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -563,7 +775,7 @@
 		};
 		64B523AC9B38E1CBBACBA56B5AFFCE7B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F64539802B75BDA3B4DB84770CC9356 /* Pods-Event CountdownTests.debug.xcconfig */;
+			baseConfigurationReference = A6D4B763B76E707B9C207EA0B6232D05 /* Pods-Event CountdownTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -598,9 +810,46 @@
 			};
 			name = Debug;
 		};
-		998C13E9F8BA43C32D684099BA1638DC /* Release */ = {
+		68A79B6B43FA958AB4A17E7FA6C06F2B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3657CF89247D64FA834BF5ED6AE0DC5B /* Pods-Event Countdown.release.xcconfig */;
+			baseConfigurationReference = 1C4585C83DD95B0DF464196BF2302E8B /* Pods-Event Countdown.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Event Countdown/Pods-Event Countdown-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Event Countdown/Pods-Event Countdown.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A2D2CB0D488F5A626027C8CA8313F945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D29728AF2931EB2F3723DF52FA37336E /* Pods-Event Countdown.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -636,11 +885,10 @@
 			};
 			name = Release;
 		};
-		D50F077D280E048E2AA1CBE878ECEE58 /* Debug */ = {
+		B7C854466008CDE402EC68A4D7263738 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DF3B5AC5467E04303B1969926C3C3EE /* Pods-Event Countdown.debug.xcconfig */;
+			baseConfigurationReference = 925975F27893FB1F7B11F335AAEED30B /* AlertToast.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -650,60 +898,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Event Countdown/Pods-Event Countdown-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/AlertToast/AlertToast-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AlertToast/AlertToast-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Event Countdown/Pods-Event Countdown.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/AlertToast/AlertToast.modulemap";
+				PRODUCT_MODULE_NAME = AlertToast;
+				PRODUCT_NAME = AlertToast;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DDD2137606E5F1CB79B41D03E9CC8E0A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75E5FF975CC4E93DC6B89EA83137AA37 /* Pods-Event Countdown-Event CountdownUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Event Countdown-Event CountdownUITests/Pods-Event Countdown-Event CountdownUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Event Countdown-Event CountdownUITests/Pods-Event Countdown-Event CountdownUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -713,6 +923,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		058CF4B13CD220E4F99FC2BAEA8B57E3 /* Build configuration list for PBXNativeTarget "AlertToast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7C854466008CDE402EC68A4D7263738 /* Debug */,
+				048AFB9BE277D96ECBD14AF2F4DFDCB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -722,20 +941,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90B82C733BF25BD3A75DEA42ACD417E0 /* Build configuration list for PBXNativeTarget "Pods-Event Countdown-Event CountdownUITests" */ = {
+		4AFDD672DB74AB9BB5B3224ED9DB982B /* Build configuration list for PBXNativeTarget "Pods-Event Countdown" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DDD2137606E5F1CB79B41D03E9CC8E0A /* Debug */,
-				2AB4EDAAD4A02561DBBE0874917ACDF2 /* Release */,
+				68A79B6B43FA958AB4A17E7FA6C06F2B /* Debug */,
+				A2D2CB0D488F5A626027C8CA8313F945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA0705310661EF9A270A40D540E74325 /* Build configuration list for PBXNativeTarget "Pods-Event Countdown" */ = {
+		C0EA59FB059B1E06332E560A6022A27E /* Build configuration list for PBXNativeTarget "Pods-Event Countdown-Event CountdownUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D50F077D280E048E2AA1CBE878ECEE58 /* Debug */,
-				998C13E9F8BA43C32D684099BA1638DC /* Release */,
+				1B66E6B4E45BCCCCDDB51866E3A8FE98 /* Debug */,
+				01887C66D0156CF883E61E4156D2EB68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

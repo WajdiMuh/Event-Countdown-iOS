@@ -8,23 +8,26 @@
 import SwiftUI
 
 struct LoadingView: View {
+    @Binding var Loading:Bool
     var body: some View {
-        VStack{
-            Spacer()
-            HStack{
+        if(Loading){
+            VStack{
                 Spacer()
-                ProgressView()
-                    .scaleEffect(x: 2, y: 2, anchor: .center)
+                HStack{
+                    Spacer()
+                    ProgressView()
+                        .scaleEffect(x: 2, y: 2, anchor: .center)
+                    Spacer()
+                }
                 Spacer()
             }
-            Spacer()
+            .background()
         }
-        .background()
     }
 }
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView()
+        LoadingView(Loading: .constant(true))
     }
 }

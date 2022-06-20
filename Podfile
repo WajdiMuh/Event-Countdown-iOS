@@ -6,7 +6,8 @@ target 'Event Countdown' do
   use_frameworks!
 
   # Pods for Event Countdown
-    
+  pod 'AlertToast'
+  
   target 'Event CountdownTests' do
     inherit! :search_paths
     # Pods for testing

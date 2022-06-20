@@ -29,10 +29,27 @@ class EventListViewModel: ObservableObject{
         }
     }
     
-    //TODO: connect edit event to backend
-    func editevent(neweditedevent:Event){
-        if let eventidx = events.firstIndex(where: {$0.id == neweditedevent.id }) {
-            events[eventidx] = neweditedevent
+    func editevent(neweditedevent:Event) async{
+        guard let url = URL(string: baseurl + "/editevent/" + String(neweditedevent.id)) else {
+            print("Invalid URL")
+            return
+        }
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "PUT"
+            let editeventjson:Data? = try? JSONEncoder().encode(neweditedevent)
+            request.httpBody = editeventjson
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let (data, _) = try await URLSession.shared.data(for: request)
+            if let decodedResponse = try? JSONDecoder().decode([Event].self, from: data) {
+                DispatchQueue.main.async{
+                    self.events = decodedResponse
+                }
+            }else{
+                print("decode failed")
+            }
+        } catch {
+            print("Invalid data")
         }
     }
     

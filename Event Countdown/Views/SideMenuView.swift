@@ -8,69 +8,66 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    @EnvironmentObject var mainviewviewmodel: MainViewViewModel
-    @EnvironmentObject var countdownviewmodel: CountdownViewModel
+    var menuitemselected: (String) -> Void = {_ in }
+    var items: [String] = []
+    @Binding var menuvisible:Bool
     var body: some View {
-        GeometryReader { geometry in
-            HStack(spacing: 0){
-                List {
-                    Group{
-                        Button("Countdown"){
-                            if(countdownviewmodel.receivedevent != nil){
-                                countdownviewmodel.receivedevent = nil
-                                Task{
-                                    mainviewviewmodel.loading = true
-                                    await countdownviewmodel.getlatestevent()
-                                    countdownviewmodel.calculatetimediff()
-                                    mainviewviewmodel.loading = false
+        if(menuvisible){
+            GeometryReader { geometry in
+                HStack(spacing: 0){
+                    List {
+                        ForEach(Array(items.enumerated()), id: \.element){ index, element in
+                            Group{
+                                Button(element){
+                                    menuitemselected(element)
+                                    withAnimation(.easeIn(duration: 0.3)){
+                                        menuvisible.toggle()
+                                    }
+                                }
+                                if(index != (items.count - 1)){
+                                    Divider()
+                                        .frame(height:1)
+                                        .background(Color("Flipdarkmode"))
                                 }
                             }
-                            mainviewviewmodel.chosenmenu = "countdown"
-                            withAnimation(.easeIn(duration: 0.3)){
-                                mainviewviewmodel.menuvisible.toggle()
-                            }
-                        }
-                        Divider()
-                            .frame(height:1)
-                            .background(Color("Flipdarkmode"))
-                        Button("Event List"){
-                            mainviewviewmodel.chosenmenu = "eventlist"
-                            withAnimation(.easeIn(duration: 0.3)){
-                                mainviewviewmodel.menuvisible.toggle()
-                            }
+                            .listRowBackground(Color.clear)
+                            .listRowInsets(EdgeInsets(top: 0, leading:10, bottom: 0, trailing: 12))
+                            .listRowSeparator(.hidden)
+                            .foregroundColor(Color("Flipdarkmode"))
                         }
                     }
-                    .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets(top: 0, leading:10, bottom: 0, trailing: 12))
-                    .listRowSeparator(.hidden)
-                    .foregroundColor(Color("Flipdarkmode"))
+                    .environment(\.defaultMinListRowHeight, 30)
+                    .padding(.top,40)
+                    .frame(width: min(geometry.size.width * 0.45, 300), height: nil)
+                    .listStyle(.plain)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .overlay(
+                        Rectangle()
+                            .frame(width: 2, height: UIScreen.main.bounds.size.height, alignment: .trailing)
+                            .foregroundColor(Color("Flipdarkmode")), alignment: .trailing)
+                    Button(action: {
+                        withAnimation(.easeIn(duration: 0.3)){
+                            menuvisible.toggle()
+                        }
+                    }, label: {
+                        Text("").frame( maxWidth:.infinity,maxHeight:.infinity)
+                    })
                 }
-                .environment(\.defaultMinListRowHeight, 30)
-                .padding(.top,40)
-                .frame(width: min(geometry.size.width * 0.45, 300), height: nil)
-                .listStyle(.plain)
-                .background(Color(UIColor.secondarySystemBackground))
-                .overlay(
-                    Rectangle()
-                        .frame(width: 2, height: UIScreen.main.bounds.size.height, alignment: .trailing)
-                        .foregroundColor(Color("Flipdarkmode")), alignment: .trailing)
-                Button(action: {
-                    withAnimation(.easeIn(duration: 0.3)){
-                        mainviewviewmodel.menuvisible.toggle()
-                    }
-                }, label: {
-                    Text("").frame( maxWidth:.infinity,maxHeight:.infinity)
-                })
             }
         }
+    }
+    func onMenuItemSelected(_ callback: @escaping (String) -> Void) -> Self {
+        var copy = self
+        copy.menuitemselected = callback
+        return copy
     }
 }
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView()
+        SideMenuView(items: ["Test item one","Test item two","Test item three"], menuvisible: .constant(true))
             .previewDevice("iPhone 12")
-        SideMenuView()
+        SideMenuView(items: ["Test item one","Test item two"], menuvisible: .constant(true))
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
     }

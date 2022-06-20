@@ -31,19 +31,17 @@ struct MainView: View {
                 }
                 ZStack{
                     switch(mainviewviewmodel.chosenmenu){
-                        case "countdown":
+                        case "Countdown":
                         CountdownView()
                             .allowsHitTesting(!mainviewviewmodel.menuvisible)
-                        case "eventlist":
+                        case "Event List":
                         EventlistView()
                             .allowsHitTesting(!mainviewviewmodel.menuvisible)
                         default:
                         CountdownView()
                             .allowsHitTesting(!mainviewviewmodel.menuvisible)
                     }
-                    if(mainviewviewmodel.loading){
-                        LoadingView()
-                    }
+                    LoadingView(Loading: $mainviewviewmodel.loading)
                 }
                 .environmentObject(countdownviewmodel)
             }
@@ -57,9 +55,20 @@ struct MainView: View {
                         }
                     })
             )
-            if(mainviewviewmodel.menuvisible){
-                SideMenuView().transition(.move(edge: .leading)).zIndex(1).environmentObject(countdownviewmodel)
-            }
+            SideMenuView(items: ["Countdown","Event List"], menuvisible: $mainviewviewmodel.menuvisible)
+                .onMenuItemSelected({ menuitem in
+                    if(menuitem == "Countdown" && countdownviewmodel.receivedevent != nil){
+                        countdownviewmodel.receivedevent = nil
+                        Task{
+                            mainviewviewmodel.loading = true
+                            await countdownviewmodel.getlatestevent()
+                            countdownviewmodel.calculatetimediff()
+                            mainviewviewmodel.loading = false
+                        }
+                    }
+                    mainviewviewmodel.chosenmenu = menuitem
+                })
+                .transition(.move(edge: .leading)).zIndex(1)
         }
     }
 }
@@ -67,11 +76,14 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(MainViewViewModel())
             .previewDevice("iPhone 12")
         MainView()
+            .environmentObject(MainViewViewModel())
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
         MainView()
+            .environmentObject(MainViewViewModel())
             .previewInterfaceOrientation(.landscapeLeft)
             .previewDevice("iPad mini (6th generation)")
     }

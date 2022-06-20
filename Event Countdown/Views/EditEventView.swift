@@ -10,6 +10,7 @@ import SwiftUI
 struct EditEventView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var eventlistviewmodel:EventListViewModel
+    @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     @State var editedevent:Event
     var body: some View {
         VStack{
@@ -27,10 +28,7 @@ struct EditEventView: View {
                 .padding(.all,5.0)
                 .border(.secondary)
                 .padding(.horizontal, 20.0)
-            DatePicker("Date", selection: $editedevent.date, in: Date.now...)
-                .datePickerStyle(GraphicalDatePickerStyle())
-                .labelsHidden()
-                .padding(.horizontal, 20.0)
+            DatePickerWithTextView(selectiondate: $editedevent.date, startdate: Date.now)
             Spacer()
             HStack{
                 Spacer()
@@ -42,11 +40,16 @@ struct EditEventView: View {
                             .foregroundColor(Color.red)
                     })
                     Button(action: {
-                        eventlistviewmodel.editevent(neweditedevent: editedevent)
                         dismiss()
+                        mainviewviewmodel.loading = true
+                        Task{
+                            await eventlistviewmodel.editevent(neweditedevent:editedevent)
+                        }
+                        mainviewviewmodel.loading = false
                     }, label: {
                         Text("Edit")
                     })
+                    .disabled(editedevent.title.isEmpty)
                 }
                 .padding(.trailing,30.0)
                 .padding(.bottom,40.0)

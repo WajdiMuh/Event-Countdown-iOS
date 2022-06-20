@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct AddEventView: View {
     @Environment(\.dismiss) var dismiss
@@ -23,18 +24,13 @@ struct AddEventView: View {
                 Spacer()
             }
             Spacer()
-            //FIXME: fix empty title
             TextField("Title",text: $title)
                 .disableAutocorrection(true)
                 .submitLabel(.done)
                 .padding(.all,5.0)
                 .border(.secondary)
                 .padding(.horizontal, 20.0)
-            //FIXME: fix not selecting date
-            DatePicker("Date", selection: $date, in: Date.now...)
-                .datePickerStyle(GraphicalDatePickerStyle())
-                .labelsHidden()
-                .padding(.horizontal, 20.0)
+            DatePickerWithTextView(selectiondate: $date, startdate: Date.now)
             Spacer()
             HStack{
                 Spacer()
@@ -55,6 +51,7 @@ struct AddEventView: View {
                     }, label: {
                         Text("Add")
                     })
+                    .disabled(title.isEmpty)
                 }
                 .padding(.trailing,30.0)
                 .padding(.bottom,40.0)
@@ -66,8 +63,10 @@ struct AddEventView: View {
 struct AddEventView_Previews: PreviewProvider {
     static var previews: some View {
         AddEventView(eventlistviewmodel: EventListViewModel())
+            .environmentObject(MainViewViewModel())
             .previewDevice("iPhone 12")
         AddEventView(eventlistviewmodel: EventListViewModel())
+            .environmentObject(MainViewViewModel())
             .previewDevice("iPhone 12")
             .preferredColorScheme(.dark)
     }

@@ -21,6 +21,7 @@
 		01A4C9F8285118E30000B1AA /* Event_CountdownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4C9F7285118E30000B1AA /* Event_CountdownUITests.swift */; };
 		01A4C9FA285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4C9F9285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift */; };
 		01A61B96285813E200BA5F0F /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A61B95285813E200BA5F0F /* EditEventView.swift */; };
+		01AD5641285FAAE900B97103 /* DatePickerWithTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD5640285FAAE900B97103 /* DatePickerWithTextView.swift */; };
 		01FBF2EE28513BA70069108D /* EventlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FBF2ED28513BA70069108D /* EventlistView.swift */; };
 		01FC4EB5285132FE00BA83D2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FC4EB4285132FE00BA83D2 /* MainView.swift */; };
 		01FF23A2285BF47B00142AA4 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FF23A1285BF47B00142AA4 /* MainViewViewModel.swift */; };
@@ -65,6 +66,7 @@
 		01A4C9F7285118E30000B1AA /* Event_CountdownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_CountdownUITests.swift; sourceTree = "<group>"; };
 		01A4C9F9285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_CountdownUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		01A61B95285813E200BA5F0F /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
+		01AD5640285FAAE900B97103 /* DatePickerWithTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithTextView.swift; sourceTree = "<group>"; };
 		01FBF2ED28513BA70069108D /* EventlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventlistView.swift; sourceTree = "<group>"; };
 		01FC4EB4285132FE00BA83D2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		01FF23A1285BF47B00142AA4 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				010ADD5F2856B954001F345F /* AddEventView.swift */,
 				01A61B95285813E200BA5F0F /* EditEventView.swift */,
 				015DFFBB285A8DC200C8EC32 /* LoadingView.swift */,
+				01AD5640285FAAE900B97103 /* DatePickerWithTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				01A4C9D5285118E30000B1AA /* Sources */,
 				01A4C9D6285118E30000B1AA /* Frameworks */,
 				01A4C9D7285118E30000B1AA /* Resources */,
+				009188476DDD258F57CB8B57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +273,7 @@
 				01A4C9EF285118E30000B1AA /* Sources */,
 				01A4C9F0285118E30000B1AA /* Frameworks */,
 				01A4C9F1285118E30000B1AA /* Resources */,
+				260ED6EEC848C6A3FBFDD502 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,6 +355,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		009188476DDD258F57CB8B57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Event Countdown/Pods-Event Countdown-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Event Countdown/Pods-Event Countdown-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Event Countdown/Pods-Event Countdown-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		15027467581309AC35BF3AAE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -394,6 +416,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		260ED6EEC848C6A3FBFDD502 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Event Countdown-Event CountdownUITests/Pods-Event Countdown-Event CountdownUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Event Countdown-Event CountdownUITests/Pods-Event Countdown-Event CountdownUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Event Countdown-Event CountdownUITests/Pods-Event Countdown-Event CountdownUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		391D6043CA20D11A4EDD37A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AD5641285FAAE900B97103 /* DatePickerWithTextView.swift in Sources */,
 				01A4C9DF285118E30000B1AA /* CountdownView.swift in Sources */,
 				01A61B96285813E200BA5F0F /* EditEventView.swift in Sources */,
 				01FF23A2285BF47B00142AA4 /* MainViewViewModel.swift in Sources */,
