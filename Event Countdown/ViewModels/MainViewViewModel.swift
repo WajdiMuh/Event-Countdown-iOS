@@ -11,4 +11,16 @@ class MainViewViewModel: ObservableObject{
     @Published var menuvisible:Bool = false
     @Published var loading:Bool = true
     @Published var chosenmenu:String = "countdown"
+    @Published var showtoast:Bool = false
+    @Published var toastmessege:String = ""
+    
+    func latesteventfetchfailed(){
+        toastmessege = "Failed to fetch latest event"
+        showtoast.toggle()
+    }
+    
+    func eventsfetchfailed(){
+        toastmessege = "Failed to fetch events"
+        showtoast.toggle()
+    }
 }

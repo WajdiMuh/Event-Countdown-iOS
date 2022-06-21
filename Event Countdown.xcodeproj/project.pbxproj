@@ -22,6 +22,7 @@
 		01A4C9FA285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4C9F9285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift */; };
 		01A61B96285813E200BA5F0F /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A61B95285813E200BA5F0F /* EditEventView.swift */; };
 		01AD5641285FAAE900B97103 /* DatePickerWithTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD5640285FAAE900B97103 /* DatePickerWithTextView.swift */; };
+		01D9CDC928627C0800F2C99E /* LoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CDC828627C0800F2C99E /* LoadError.swift */; };
 		01FBF2EE28513BA70069108D /* EventlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FBF2ED28513BA70069108D /* EventlistView.swift */; };
 		01FC4EB5285132FE00BA83D2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FC4EB4285132FE00BA83D2 /* MainView.swift */; };
 		01FF23A2285BF47B00142AA4 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FF23A1285BF47B00142AA4 /* MainViewViewModel.swift */; };
@@ -67,6 +68,7 @@
 		01A4C9F9285118E30000B1AA /* Event_CountdownUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_CountdownUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		01A61B95285813E200BA5F0F /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
 		01AD5640285FAAE900B97103 /* DatePickerWithTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithTextView.swift; sourceTree = "<group>"; };
+		01D9CDC828627C0800F2C99E /* LoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadError.swift; sourceTree = "<group>"; };
 		01FBF2ED28513BA70069108D /* EventlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventlistView.swift; sourceTree = "<group>"; };
 		01FC4EB4285132FE00BA83D2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		01FF23A1285BF47B00142AA4 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				0133F57228557BA800CF99F6 /* Event.swift */,
+				01D9CDC828627C0800F2C99E /* LoadError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			files = (
 				01AD5641285FAAE900B97103 /* DatePickerWithTextView.swift in Sources */,
 				01A4C9DF285118E30000B1AA /* CountdownView.swift in Sources */,
+				01D9CDC928627C0800F2C99E /* LoadError.swift in Sources */,
 				01A61B96285813E200BA5F0F /* EditEventView.swift in Sources */,
 				01FF23A2285BF47B00142AA4 /* MainViewViewModel.swift in Sources */,
 				010ADD602856B954001F345F /* AddEventView.swift in Sources */,

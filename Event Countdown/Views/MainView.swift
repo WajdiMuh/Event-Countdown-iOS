@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct MainView: View {
     @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     @StateObject var countdownviewmodel:CountdownViewModel = CountdownViewModel()
     //TODO: Add local notifications
+    //TODO: display toast msg add edit delete failure
     var body: some View {
         ZStack{
             VStack{
@@ -45,6 +47,9 @@ struct MainView: View {
                 }
                 .environmentObject(countdownviewmodel)
             }
+            .toast(isPresenting: $mainviewviewmodel.showtoast){
+                AlertToast(displayMode: .banner(.pop), type: .error(.red), title: mainviewviewmodel.toastmessege)
+            }
             .gesture(
                 DragGesture(minimumDistance: 30, coordinateSpace: .local)
                     .onEnded({ drag in
@@ -61,7 +66,13 @@ struct MainView: View {
                         countdownviewmodel.receivedevent = nil
                         Task{
                             mainviewviewmodel.loading = true
-                            await countdownviewmodel.getlatestevent()
+                            do{
+                                try await countdownviewmodel.getlatestevent()
+                            }catch LoadError.fetchFailed {
+                                mainviewviewmodel.latesteventfetchfailed()
+                            }catch{
+                                
+                            }
                             countdownviewmodel.calculatetimediff()
                             mainviewviewmodel.loading = false
                         }
@@ -74,17 +85,22 @@ struct MainView: View {
 }
 
 struct MainView_Previews: PreviewProvider {
+    static let mainviewmodel = MainViewViewModel()
     static var previews: some View {
-        MainView()
-            .environmentObject(MainViewViewModel())
-            .previewDevice("iPhone 12")
-        MainView()
-            .environmentObject(MainViewViewModel())
-            .previewDevice("iPhone 12")
-            .preferredColorScheme(.dark)
-        MainView()
-            .environmentObject(MainViewViewModel())
-            .previewInterfaceOrientation(.landscapeLeft)
-            .previewDevice("iPad mini (6th generation)")
+        Group{
+            MainView()
+                .environmentObject(mainviewmodel)
+                .previewDevice("iPhone 12")
+            MainView()
+                .environmentObject(mainviewmodel)
+                .previewDevice("iPhone 12")
+                .preferredColorScheme(.dark)
+            MainView()
+                .environmentObject(mainviewmodel)
+                .previewInterfaceOrientation(.landscapeLeft)
+                .previewDevice("iPad mini (6th generation)")
+        }.task {
+            mainviewmodel.loading = false
+        }
     }
 }

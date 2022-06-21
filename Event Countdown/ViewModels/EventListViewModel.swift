@@ -10,10 +10,9 @@ import Foundation
 class EventListViewModel: ObservableObject{
     @Published var events:[Event] = []
     let baseurl:String = "https://eventcountdown.herokuapp.com"
-    func getallevents() async {
+    func getallevents() async throws {
         guard let url = URL(string: baseurl + "/getallevents") else {
-            print("Invalid URL")
-            return
+            throw LoadError.urlFailed
         }
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
@@ -22,10 +21,10 @@ class EventListViewModel: ObservableObject{
                     self.events = decodedResponse
                 }
             }else{
-                print("decode failed")
+                throw LoadError.decodeFailed
             }
         } catch {
-            print("Invalid data")
+            throw LoadError.fetchFailed
         }
     }
     

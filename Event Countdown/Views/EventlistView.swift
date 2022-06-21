@@ -85,27 +85,56 @@ struct EventlistView: View {
         .environment(\.editMode, .constant(.inactive))
         .listStyle(.plain)
         .refreshable {
-            await eventlistviewmodel.getallevents()
+            do{
+                try await eventlistviewmodel.getallevents()
+            }catch LoadError.fetchFailed {
+                mainviewviewmodel.eventsfetchfailed()
+            }catch {
+                
+            }
         }
         .task {
             mainviewviewmodel.loading = true
             countdownviewmodel.receivedevent = nil
-            await eventlistviewmodel.getallevents()
+            do{
+                try await eventlistviewmodel.getallevents()
+            }catch LoadError.fetchFailed {
+                mainviewviewmodel.eventsfetchfailed()
+            }catch {
+                
+            }
             mainviewviewmodel.loading = false
         }
     }
 }
 
 struct EventListView_Previews: PreviewProvider {
+    static let mainviewmodel = MainViewViewModel()
+    static let countdownviewmodel = CountdownViewModel()
+    static let eventlistview = EventlistView()
+
     static var previews: some View {
-        EventlistView()
-            .previewDevice("iPhone 12")
-        EventlistView()
-            .previewDevice("iPhone 12")
-            .preferredColorScheme(.dark)
-        EventlistView()
-            .previewDevice("iPad mini (6th generation)")
-            .preferredColorScheme(.dark)
-            .previewInterfaceOrientation(.landscapeLeft)
+        Group{
+            eventlistview
+                .previewDevice("iPhone 12")
+                .environmentObject(mainviewmodel)
+                .environmentObject(countdownviewmodel)
+            
+            eventlistview
+                .previewDevice("iPhone 12")
+                .preferredColorScheme(.dark)
+                .environmentObject(mainviewmodel)
+                .environmentObject(countdownviewmodel)
+            
+            eventlistview
+                .previewDevice("iPad mini (6th generation)")
+                .preferredColorScheme(.dark)
+                .previewInterfaceOrientation(.landscapeLeft)
+                .environmentObject(mainviewmodel)
+                .environmentObject(countdownviewmodel)
+        }
+        .task{
+            eventlistview.eventlistviewmodel.events = [Event(id: 0, title: "Test", date: Date.now),Event(id: 1, title: "Test 1", date: Date.now.addingTimeInterval(86400))]
+        }
     }
 }

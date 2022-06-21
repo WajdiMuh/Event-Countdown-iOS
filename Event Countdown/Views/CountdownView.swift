@@ -21,36 +21,43 @@ struct CountdownView: View {
             List{
                 HStack{
                     Spacer()
-                    HStack{
-                        VStack(alignment: .leading,spacing: 10){
-                            Text(countdownviewmodel.event?.title ?? "Title")
-                                .font(.system(size:30))
-                                .fontWeight(.semibold)
-                                .padding(.bottom)
-                            Text("Date :")
-                            Text("\(countdownviewmodel.event?.date ?? Date.now, formatter: Self.dateformat)")
-                            Text("Time Left :")
-                            Text("Years: \(countdownviewmodel.difference.year ?? 0), Months: \(countdownviewmodel.difference.month ?? 0), Days: \(countdownviewmodel.difference.day ?? 0), Hours: \(countdownviewmodel.difference.hour ?? 0), Minutes: \(countdownviewmodel.difference.minute ?? 0), Seconds: \(countdownviewmodel.difference.second ?? 0)")
-                                .onReceive(timer) { time in
-                                    if(!mainviewviewmodel.loading){
-                                        countdownviewmodel.calculatetimediff()
-                                        if(countdownviewmodel.difference.second! <= 0){
-                                            mainviewviewmodel.loading = true
-                                            Task{
-                                                await countdownviewmodel.getlatestevent()
-                                            }
+                    if(countdownviewmodel.event != nil){
+                        HStack{
+                            VStack(alignment: .leading,spacing: 10){
+                                Text(countdownviewmodel.event?.title ?? "Title")
+                                    .font(.system(size:30))
+                                    .fontWeight(.semibold)
+                                    .padding(.bottom)
+                                Text("Date :")
+                                Text("\(countdownviewmodel.event?.date ?? Date.now, formatter: Self.dateformat)")
+                                Text("Time Left :")
+                                Text("Years: \(countdownviewmodel.difference.year ?? 0), Months: \(countdownviewmodel.difference.month ?? 0), Days: \(countdownviewmodel.difference.day ?? 0), Hours: \(countdownviewmodel.difference.hour ?? 0), Minutes: \(countdownviewmodel.difference.minute ?? 0), Seconds: \(countdownviewmodel.difference.second ?? 0)")
+                                    .onReceive(timer) { time in
+                                        if(!mainviewviewmodel.loading){
                                             countdownviewmodel.calculatetimediff()
-                                            mainviewviewmodel.loading = false
+                                            if(countdownviewmodel.difference.second! < 0){
+                                                mainviewviewmodel.loading = true
+                                                Task{
+                                                    do{
+                                                        try await countdownviewmodel.getlatestevent()
+                                                    }catch LoadError.fetchFailed {
+                                                        mainviewviewmodel.latesteventfetchfailed()
+                                                    }catch{
+                                                        
+                                                    }
+                                                }
+                                                countdownviewmodel.calculatetimediff()
+                                                mainviewviewmodel.loading = false
+                                            }
                                         }
                                     }
-                                }
+                            }
                         }
-                        Spacer()
+                        .padding(20)
+                        .frame(maxWidth: 400)
+                            .background(Color(UIColor.secondarySystemBackground))
+                        .cornerRadius(10)
                     }
-                    .padding(20)
-                    .frame(maxWidth: 400)
-                        .background(Color(UIColor.secondarySystemBackground))
-                    .cornerRadius(10)
                     Spacer()
                 }
                 .frame(height: geometry.size.height - 20)
@@ -60,7 +67,13 @@ struct CountdownView: View {
             .listStyle(.plain)
             .refreshable {
                 if(countdownviewmodel.receivedevent == nil){
-                    await countdownviewmodel.getlatestevent()
+                    do{
+                        try await countdownviewmodel.getlatestevent()
+                    }catch LoadError.fetchFailed {
+                        mainviewviewmodel.latesteventfetchfailed()
+                    }catch{
+                        
+                    }
                     countdownviewmodel.calculatetimediff()
                 }else{
                     countdownviewmodel.event = countdownviewmodel.receivedevent
@@ -70,7 +83,13 @@ struct CountdownView: View {
             .task {
                 if(countdownviewmodel.receivedevent == nil){
                     mainviewviewmodel.loading = true
-                    await countdownviewmodel.getlatestevent()
+                    do{
+                        try await countdownviewmodel.getlatestevent()
+                    }catch LoadError.fetchFailed {
+                        mainviewviewmodel.latesteventfetchfailed()
+                    }catch {
+                        
+                    }
                     countdownviewmodel.calculatetimediff()
                     mainviewviewmodel.loading = false
                 }else{
@@ -82,16 +101,31 @@ struct CountdownView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let mainviewmodel = MainViewViewModel()
+    static let countdownviewmodel = CountdownViewModel()
+
     static var previews: some View {
-        // iPhone Content View
-        CountdownView()
-            .previewDevice("iPhone 12")
-        CountdownView()
-            .previewDevice("iPhone 12")
-            .preferredColorScheme(.dark)
-        // iPad Content View
-        CountdownView()
-            .previewInterfaceOrientation(.landscapeLeft)
-            .previewDevice("iPad mini (6th generation)")
+        Group{
+            // iPhone Content View
+            CountdownView()
+                .environmentObject(mainviewmodel)
+                .environmentObject(countdownviewmodel)
+                .previewDevice("iPhone 12")
+            CountdownView()
+                .environmentObject(mainviewmodel)
+                .environmentObject(countdownviewmodel)
+                .previewDevice("iPhone 12")
+                .preferredColorScheme(.dark)
+
+            // iPad Content View
+            CountdownView()
+                .environmentObject(mainviewmodel)
+                .environmentObject(countdownviewmodel)
+                .previewInterfaceOrientation(.landscapeLeft)
+                .previewDevice("iPad mini (6th generation)")
+        }
+        .task {
+            countdownviewmodel.event = Event(id: 0, title: "Test", date: Date.now)
+        }
     }
 }

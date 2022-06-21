@@ -13,10 +13,9 @@ class CountdownViewModel: ObservableObject{
     @Published var difference:DateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour, .minute,.second], from: Date.now, to: Date.now)
     let baseurl:String = "https://eventcountdown.herokuapp.com"
     
-    func getlatestevent() async {
+    func getlatestevent() async throws {
         guard let url = URL(string: baseurl + "/getlatestevent") else {
-            print("Invalid URL")
-            return
+            throw LoadError.urlFailed
         }
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
@@ -26,10 +25,10 @@ class CountdownViewModel: ObservableObject{
                     self.receivedevent = nil
                 }
             }else{
-                print("decode failed")
+                throw LoadError.decodeFailed
             }
         } catch {
-            print("Invalid data")
+            throw LoadError.fetchFailed
         }
     }
     
