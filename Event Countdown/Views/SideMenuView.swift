@@ -19,10 +19,10 @@ struct SideMenuView: View {
                         ForEach(Array(items.enumerated()), id: \.element){ index, element in
                             Group{
                                 Button(element){
-                                    menuitemselected(element)
                                     withAnimation(.easeIn(duration: 0.3)){
                                         menuvisible.toggle()
                                     }
+                                    menuitemselected(element)
                                 }
                                 if(index != (items.count - 1)){
                                     Divider()
