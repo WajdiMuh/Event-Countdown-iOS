@@ -8,5 +8,5 @@
 import Foundation
 
 enum LoadError: Error {
-    case fetchFailed, decodeFailed,urlFailed
+    case fetchFailed, decodeFailed,urlFailed,taskCancelled
 }

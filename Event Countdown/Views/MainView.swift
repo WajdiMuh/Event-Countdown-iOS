@@ -12,7 +12,6 @@ struct MainView: View {
     @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     @StateObject var countdownviewmodel:CountdownViewModel = CountdownViewModel()
     //TODO: Add local notifications
-    //TODO: display toast msg add edit delete failure
     var body: some View {
         ZStack{
             VStack{
@@ -86,10 +85,16 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static let mainviewmodel = MainViewViewModel()
+    static let countdownviewmodel = CountdownViewModel()
     static var previews: some View {
-        Group{
+        //let mainviewmodel = MainViewViewModel()
+        mainviewmodel.chosenmenu = "Countdown"
+        mainviewmodel.loading = false
+        mainviewmodel.showtoast = false
+        return Group{
             MainView()
                 .environmentObject(mainviewmodel)
+                .environmentObject(countdownviewmodel)
                 .previewDevice("iPhone 12")
             MainView()
                 .environmentObject(mainviewmodel)
@@ -100,7 +105,9 @@ struct MainView_Previews: PreviewProvider {
                 .previewInterfaceOrientation(.landscapeLeft)
                 .previewDevice("iPad mini (6th generation)")
         }.task {
-            mainviewmodel.loading = false
+            mainviewmodel.loading.toggle()
+            mainviewmodel.showtoast.toggle()
+            
         }
     }
 }

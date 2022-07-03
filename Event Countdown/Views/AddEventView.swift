@@ -45,7 +45,13 @@ struct AddEventView: View {
                         dismiss()
                         mainviewviewmodel.loading = true
                         Task{
-                            await eventlistviewmodel.addevent(title: title, date: date)
+                            do{
+                                try await eventlistviewmodel.addevent(title: title, date: date)
+                            }catch LoadError.fetchFailed {
+                                mainviewviewmodel.eventaddfailed()
+                            }catch {
+                                
+                            }
                         }
                         mainviewviewmodel.loading = false
                     }, label: {

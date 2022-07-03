@@ -39,7 +39,13 @@ struct EventlistView: View {
                         Button {
                             mainviewviewmodel.loading = true
                             Task{
-                                await eventlistviewmodel.deleteevent(deletedevent: event)
+                                do{
+                                    try await eventlistviewmodel.deleteevent(deletedevent: event)
+                                }catch LoadError.fetchFailed {
+                                    mainviewviewmodel.eventdeletefailed()
+                                }catch {
+                                    
+                                }
                             }
                             mainviewviewmodel.loading  = false
                         } label: {
@@ -98,12 +104,13 @@ struct EventlistView: View {
             countdownviewmodel.receivedevent = nil
             do{
                 try await eventlistviewmodel.getallevents()
+                mainviewviewmodel.loading = false
             }catch LoadError.fetchFailed {
                 mainviewviewmodel.eventsfetchfailed()
+                mainviewviewmodel.loading = false
             }catch {
                 
             }
-            mainviewviewmodel.loading = false
         }
     }
 }
@@ -114,7 +121,8 @@ struct EventListView_Previews: PreviewProvider {
     static let eventlistview = EventlistView()
 
     static var previews: some View {
-        Group{
+        eventlistview.eventlistviewmodel.events = [Event(id: 0, title: "Test", date: Date.now),Event(id: 1, title: "Test 1", date: Date.now.addingTimeInterval(86400))]
+        return Group{
             eventlistview
                 .previewDevice("iPhone 12")
                 .environmentObject(mainviewmodel)
@@ -132,9 +140,6 @@ struct EventListView_Previews: PreviewProvider {
                 .previewInterfaceOrientation(.landscapeLeft)
                 .environmentObject(mainviewmodel)
                 .environmentObject(countdownviewmodel)
-        }
-        .task{
-            eventlistview.eventlistviewmodel.events = [Event(id: 0, title: "Test", date: Date.now),Event(id: 1, title: "Test 1", date: Date.now.addingTimeInterval(86400))]
         }
     }
 }

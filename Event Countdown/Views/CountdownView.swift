@@ -85,13 +85,13 @@ struct CountdownView: View {
                     mainviewviewmodel.loading = true
                     do{
                         try await countdownviewmodel.getlatestevent()
+                        mainviewviewmodel.loading = false
                     }catch LoadError.fetchFailed {
-                        mainviewviewmodel.latesteventfetchfailed()
-                    }catch {
+                        mainviewviewmodel.loading = false
+                    }catch{
                         
                     }
                     countdownviewmodel.calculatetimediff()
-                    mainviewviewmodel.loading = false
                 }else{
                     countdownviewmodel.calculatetimediff()
                 }

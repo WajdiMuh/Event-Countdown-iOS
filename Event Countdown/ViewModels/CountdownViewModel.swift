@@ -28,7 +28,13 @@ class CountdownViewModel: ObservableObject{
                 throw LoadError.decodeFailed
             }
         } catch {
-            throw LoadError.fetchFailed
+            if let error = error as? URLError {
+                if error.code == .cancelled{
+                    throw LoadError.taskCancelled
+                }else{
+                    throw LoadError.fetchFailed
+                }
+            }
         }
     }
     

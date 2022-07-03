@@ -24,14 +24,19 @@ class EventListViewModel: ObservableObject{
                 throw LoadError.decodeFailed
             }
         } catch {
-            throw LoadError.fetchFailed
+            if let error = error as? URLError {
+                if error.code == .cancelled{
+                    throw LoadError.taskCancelled
+                }else{
+                    throw LoadError.fetchFailed
+                }
+            }
         }
     }
     
-    func editevent(neweditedevent:Event) async{
+    func editevent(neweditedevent:Event) async throws {
         guard let url = URL(string: baseurl + "/editevent/" + String(neweditedevent.id)) else {
-            print("Invalid URL")
-            return
+            throw LoadError.urlFailed
         }
         do {
             var request = URLRequest(url: url)
@@ -45,14 +50,20 @@ class EventListViewModel: ObservableObject{
                     self.events = decodedResponse
                 }
             }else{
-                print("decode failed")
+                throw LoadError.decodeFailed
             }
         } catch {
-            print("Invalid data")
+            if let error = error as? URLError {
+                if error.code == .cancelled{
+                    throw LoadError.taskCancelled
+                }else{
+                    throw LoadError.fetchFailed
+                }
+            }
         }
     }
     
-    func addevent(title:String, date:Date) async{
+    func addevent(title:String, date:Date) async throws {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXXXX"
         let neweventdata: [String: Any] = [
@@ -60,8 +71,7 @@ class EventListViewModel: ObservableObject{
             "date": dateFormatter.string(from: date)
         ]
         guard let url = URL(string: baseurl + "/addevent") else {
-            print("Invalid URL")
-            return
+            throw LoadError.urlFailed
         }
         do {
             var request = URLRequest(url: url)
@@ -75,17 +85,22 @@ class EventListViewModel: ObservableObject{
                     self.events = decodedResponse
                 }
             }else{
-                print("decode failed")
+                throw LoadError.decodeFailed
             }
         } catch {
-            print("Invalid data")
+            if let error = error as? URLError {
+                if error.code == .cancelled{
+                    throw LoadError.taskCancelled
+                }else{
+                    throw LoadError.fetchFailed
+                }
+            }
         }
     }
     
-    func deleteevent(deletedevent:Event) async{
+    func deleteevent(deletedevent:Event) async throws {
         guard let url = URL(string: baseurl + "/deleteevent/" + String(deletedevent.id)) else {
-            print("Invalid URL")
-            return
+            throw LoadError.urlFailed
         }
         do {
             var request = URLRequest(url: url)
@@ -96,10 +111,16 @@ class EventListViewModel: ObservableObject{
                     self.events = decodedResponse
                 }
             }else{
-                print("decode failed")
+                throw LoadError.decodeFailed
             }
         } catch {
-            print("Invalid data")
+            if let error = error as? URLError {
+                if error.code == .cancelled{
+                    throw LoadError.taskCancelled
+                }else{
+                    throw LoadError.fetchFailed
+                }
+            }
         }
     }
 }

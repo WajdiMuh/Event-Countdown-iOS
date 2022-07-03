@@ -43,7 +43,13 @@ struct EditEventView: View {
                         dismiss()
                         mainviewviewmodel.loading = true
                         Task{
-                            await eventlistviewmodel.editevent(neweditedevent:editedevent)
+                            do{
+                                try await eventlistviewmodel.editevent(neweditedevent:editedevent)
+                            }catch LoadError.fetchFailed {
+                                mainviewviewmodel.eventeditfailed()
+                            }catch {
+                                
+                            }
                         }
                         mainviewviewmodel.loading = false
                     }, label: {
