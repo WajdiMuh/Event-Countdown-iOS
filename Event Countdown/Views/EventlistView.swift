@@ -11,13 +11,18 @@ struct EventlistView: View {
     @State private var showaddevent = false
     @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     @State var editedevent:Event?
-    @StateObject var eventlistviewmodel:EventListViewModel = EventListViewModel()
+    @StateObject var eventlistviewmodel:EventListViewModel
     @EnvironmentObject var countdownviewmodel: CountdownViewModel
     static let dateformat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy, h:mm a"
         return formatter
     }()
+    
+    init(viewmodel: EventListViewModel = EventListViewModel()){
+        _eventlistviewmodel = StateObject(wrappedValue: viewmodel)
+    }
+    
     var body: some View {
         List{
             Section(header:
@@ -118,10 +123,14 @@ struct EventlistView: View {
 struct EventListView_Previews: PreviewProvider {
     static let mainviewmodel = MainViewViewModel()
     static let countdownviewmodel = CountdownViewModel()
-    static let eventlistview = EventlistView()
+    static let eventlistviewmodel = { () -> EventListViewModel in
+        let testviewmodel:EventListViewModel = EventListViewModel()
+        testviewmodel.events = [Event(id: 0, title: "Test", date: Date.now),Event(id: 1, title: "Test 1", date: Date.now.addingTimeInterval(86400))]
+        return testviewmodel
+    }()
+    static let eventlistview = EventlistView(viewmodel: eventlistviewmodel)
 
     static var previews: some View {
-        eventlistview.eventlistviewmodel.events = [Event(id: 0, title: "Test", date: Date.now),Event(id: 1, title: "Test 1", date: Date.now.addingTimeInterval(86400))]
         return Group{
             eventlistview
                 .previewDevice("iPhone 12")
@@ -133,7 +142,7 @@ struct EventListView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
                 .environmentObject(mainviewmodel)
                 .environmentObject(countdownviewmodel)
-            
+
             eventlistview
                 .previewDevice("iPad mini (6th generation)")
                 .preferredColorScheme(.dark)

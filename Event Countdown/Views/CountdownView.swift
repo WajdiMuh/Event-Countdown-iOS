@@ -101,31 +101,33 @@ struct CountdownView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let countdownview = CountdownView()
     static let mainviewmodel = MainViewViewModel()
-    static let countdownviewmodel = CountdownViewModel()
+    static let countdownviewmodel = { () -> CountdownViewModel in
+        let testviewmodel:CountdownViewModel = CountdownViewModel()
+        testviewmodel.event = Event(id: 0, title: "Test", date: Date.now)
+        return testviewmodel
+    }()
 
     static var previews: some View {
         Group{
             // iPhone Content View
-            CountdownView()
+            countdownview
                 .environmentObject(mainviewmodel)
                 .environmentObject(countdownviewmodel)
                 .previewDevice("iPhone 12")
-            CountdownView()
+            countdownview
                 .environmentObject(mainviewmodel)
                 .environmentObject(countdownviewmodel)
                 .previewDevice("iPhone 12")
                 .preferredColorScheme(.dark)
 
             // iPad Content View
-            CountdownView()
+            countdownview
                 .environmentObject(mainviewmodel)
                 .environmentObject(countdownviewmodel)
                 .previewInterfaceOrientation(.landscapeLeft)
                 .previewDevice("iPad mini (6th generation)")
-        }
-        .task {
-            countdownviewmodel.event = Event(id: 0, title: "Test", date: Date.now)
         }
     }
 }

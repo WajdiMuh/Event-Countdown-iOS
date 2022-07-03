@@ -10,8 +10,13 @@ import AlertToast
 
 struct MainView: View {
     @EnvironmentObject var mainviewviewmodel: MainViewViewModel
-    @StateObject var countdownviewmodel:CountdownViewModel = CountdownViewModel()
+    @StateObject var countdownviewmodel:CountdownViewModel
     //TODO: Add local notifications
+    
+    init(viewmodel: CountdownViewModel = CountdownViewModel()){
+        _countdownviewmodel = StateObject(wrappedValue: viewmodel)
+    }
+    
     var body: some View {
         ZStack{
             VStack{
@@ -84,30 +89,32 @@ struct MainView: View {
 }
 
 struct MainView_Previews: PreviewProvider {
-    static let mainviewmodel = MainViewViewModel()
-    static let countdownviewmodel = CountdownViewModel()
+    static let mainviewmodel = { () -> MainViewViewModel in
+        let testviewmodel:MainViewViewModel = MainViewViewModel()
+        testviewmodel.loading = false
+        testviewmodel.showtoast = false
+        return testviewmodel
+    }()
+    static let countdownviewmodel =  { () -> CountdownViewModel in
+        let testviewmodel:CountdownViewModel = CountdownViewModel()
+        testviewmodel.event = Event(id: 0, title: "Test", date: Date.now)
+        testviewmodel.receivedevent = Event(id: 0, title: "Test", date: Date.now)
+        return testviewmodel
+    }()
+    static let mainview = MainView(viewmodel: countdownviewmodel)
     static var previews: some View {
-        //let mainviewmodel = MainViewViewModel()
-        mainviewmodel.chosenmenu = "Countdown"
-        mainviewmodel.loading = false
-        mainviewmodel.showtoast = false
-        return Group{
-            MainView()
+        Group{
+            mainview
                 .environmentObject(mainviewmodel)
-                .environmentObject(countdownviewmodel)
                 .previewDevice("iPhone 12")
-            MainView()
+            mainview
                 .environmentObject(mainviewmodel)
                 .previewDevice("iPhone 12")
                 .preferredColorScheme(.dark)
-            MainView()
+            mainview
                 .environmentObject(mainviewmodel)
                 .previewInterfaceOrientation(.landscapeLeft)
                 .previewDevice("iPad mini (6th generation)")
-        }.task {
-            mainviewmodel.loading.toggle()
-            mainviewmodel.showtoast.toggle()
-            
         }
     }
 }
