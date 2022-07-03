@@ -7,11 +7,11 @@
 
 import SwiftUI
 import AlertToast
+import UserNotifications
 
 struct MainView: View {
     @EnvironmentObject var mainviewviewmodel: MainViewViewModel
     @StateObject var countdownviewmodel:CountdownViewModel
-    //TODO: Add local notifications
     
     init(viewmodel: CountdownViewModel = CountdownViewModel()){
         _countdownviewmodel = StateObject(wrappedValue: viewmodel)
@@ -84,6 +84,12 @@ struct MainView: View {
                     mainviewviewmodel.chosenmenu = menuitem
                 })
                 .transition(.move(edge: .leading)).zIndex(1)
+        }.task {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
 }

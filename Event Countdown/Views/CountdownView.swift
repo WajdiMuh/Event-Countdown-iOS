@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct CountdownView: View {
     @EnvironmentObject var mainviewviewmodel: MainViewViewModel
@@ -16,6 +17,26 @@ struct CountdownView: View {
     }()
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @EnvironmentObject var countdownviewmodel: CountdownViewModel
+    
+    func makelocalnotification(event: Event?){
+        
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
+        if let event = event {
+            let content = UNMutableNotificationContent()
+            content.title = "Upcoming Event"
+            content.subtitle = event.title
+            content.sound = UNNotificationSound.default
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: event.date.timeIntervalSinceNow, repeats: false)
+
+            let request = UNNotificationRequest(identifier: String(event.id), content: content, trigger: trigger)
+
+            UNUserNotificationCenter.current().add(request)
+        }
+        
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             List{
@@ -40,8 +61,10 @@ struct CountdownView: View {
                                                 Task{
                                                     do{
                                                         try await countdownviewmodel.getlatestevent()
+                                                        makelocalnotification(event: countdownviewmodel.event)
                                                     }catch LoadError.fetchFailed {
                                                         mainviewviewmodel.latesteventfetchfailed()
+                                                        makelocalnotification(event: nil)
                                                     }catch{
                                                         
                                                     }
@@ -69,8 +92,10 @@ struct CountdownView: View {
                 if(countdownviewmodel.receivedevent == nil){
                     do{
                         try await countdownviewmodel.getlatestevent()
+                        makelocalnotification(event: countdownviewmodel.event)
                     }catch LoadError.fetchFailed {
                         mainviewviewmodel.latesteventfetchfailed()
+                        makelocalnotification(event: nil)
                     }catch{
                         
                     }
@@ -85,8 +110,11 @@ struct CountdownView: View {
                     mainviewviewmodel.loading = true
                     do{
                         try await countdownviewmodel.getlatestevent()
+                        makelocalnotification(event: countdownviewmodel.event)
                         mainviewviewmodel.loading = false
                     }catch LoadError.fetchFailed {
+                        mainviewviewmodel.latesteventfetchfailed()
+                        makelocalnotification(event: nil)
                         mainviewviewmodel.loading = false
                     }catch{
                         
