@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		010ADD602856B954001F345F /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010ADD5F2856B954001F345F /* AddEventView.swift */; };
 		010BE2852858780F00B7292E /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BE2842858780F00B7292E /* EventListViewModel.swift */; };
+		0128867A2873288C0093A3FC /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012886792873288C0093A3FC /* EventsService.swift */; };
+		0128867C287329A30093A3FC /* EventsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128867B287329A30093A3FC /* EventsServiceProtocol.swift */; };
 		0133F57328557BA800CF99F6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F57228557BA800CF99F6 /* Event.swift */; };
 		0148103F28528FF3004BDE8A /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148103E28528FF3004BDE8A /* SideMenuView.swift */; };
 		015DFFBC285A8DC200C8EC32 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015DFFBB285A8DC200C8EC32 /* LoadingView.swift */; };
@@ -52,6 +54,8 @@
 		002619BEB462FAB33BEA8A59 /* Pods-Event CountdownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event CountdownTests.release.xcconfig"; path = "Target Support Files/Pods-Event CountdownTests/Pods-Event CountdownTests.release.xcconfig"; sourceTree = "<group>"; };
 		010ADD5F2856B954001F345F /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		010BE2842858780F00B7292E /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
+		012886792873288C0093A3FC /* EventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsService.swift; sourceTree = "<group>"; };
+		0128867B287329A30093A3FC /* EventsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceProtocol.swift; sourceTree = "<group>"; };
 		0133F57228557BA800CF99F6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0148103E28528FF3004BDE8A /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		015DFFBB285A8DC200C8EC32 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01288677287328240093A3FC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				012886792873288C0093A3FC /* EventsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		01288678287328320093A3FC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0128867B287329A30093A3FC /* EventsServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		01A4C9D0285118E20000B1AA = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +155,8 @@
 		01A4C9DB285118E30000B1AA /* Event Countdown */ = {
 			isa = PBXGroup;
 			children = (
+				01288678287328320093A3FC /* Protocols */,
+				01288677287328240093A3FC /* Services */,
 				01A4CA0828512E440000B1AA /* Models */,
 				01A4CA0628512DB30000B1AA /* Views */,
 				01A4CA0728512E2F0000B1AA /* ViewModels */,
@@ -469,6 +491,7 @@
 				01A4C9DF285118E30000B1AA /* CountdownView.swift in Sources */,
 				01D9CDC928627C0800F2C99E /* LoadError.swift in Sources */,
 				01A61B96285813E200BA5F0F /* EditEventView.swift in Sources */,
+				0128867A2873288C0093A3FC /* EventsService.swift in Sources */,
 				01FF23A2285BF47B00142AA4 /* MainViewViewModel.swift in Sources */,
 				010ADD602856B954001F345F /* AddEventView.swift in Sources */,
 				015DFFBC285A8DC200C8EC32 /* LoadingView.swift in Sources */,
@@ -478,6 +501,7 @@
 				015DFFBE285A91BA00C8EC32 /* CountdownViewModel.swift in Sources */,
 				010BE2852858780F00B7292E /* EventListViewModel.swift in Sources */,
 				0133F57328557BA800CF99F6 /* Event.swift in Sources */,
+				0128867C287329A30093A3FC /* EventsServiceProtocol.swift in Sources */,
 				01FBF2EE28513BA70069108D /* EventlistView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

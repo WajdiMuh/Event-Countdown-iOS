@@ -11,30 +11,21 @@ class CountdownViewModel: ObservableObject{
     @Published var event:Event? = nil
     @Published var receivedevent:Event? = nil
     @Published var difference:DateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour, .minute,.second], from: Date.now, to: Date.now)
-    let baseurl:String = "https://eventcountdown.herokuapp.com"
+    private let eventsservice:EventsServiceProtocol
+    
+    init(eventsservice:EventsServiceProtocol = EventsService()){
+        self.eventsservice = eventsservice
+    }
     
     func getlatestevent() async throws {
-        guard let url = URL(string: baseurl + "/getlatestevent") else {
-            throw LoadError.urlFailed
-        }
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            if let decodedResponse = try? JSONDecoder().decode(Event.self, from: data) {
-                DispatchQueue.main.async{
-                    self.event = decodedResponse
-                    self.receivedevent = nil
-                }
-            }else{
-                throw LoadError.decodeFailed
+        do{
+            let latestevent:Event =  try await eventsservice.getlatestevent()
+            DispatchQueue.main.async(){
+                self.event = latestevent
+                self.receivedevent = nil
             }
-        } catch {
-            if let error = error as? URLError {
-                if error.code == .cancelled{
-                    throw LoadError.taskCancelled
-                }else{
-                    throw LoadError.fetchFailed
-                }
-            }
+        }catch{
+            throw error
         }
     }
     
