@@ -11,6 +11,7 @@
 		010BE2852858780F00B7292E /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BE2842858780F00B7292E /* EventListViewModel.swift */; };
 		0128867A2873288C0093A3FC /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012886792873288C0093A3FC /* EventsService.swift */; };
 		0128867C287329A30093A3FC /* EventsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128867B287329A30093A3FC /* EventsServiceProtocol.swift */; };
+		0128867F287337F40093A3FC /* EventsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128867E287337F40093A3FC /* EventsServiceMock.swift */; };
 		0133F57328557BA800CF99F6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F57228557BA800CF99F6 /* Event.swift */; };
 		0148103F28528FF3004BDE8A /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148103E28528FF3004BDE8A /* SideMenuView.swift */; };
 		015DFFBC285A8DC200C8EC32 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015DFFBB285A8DC200C8EC32 /* LoadingView.swift */; };
@@ -56,6 +57,7 @@
 		010BE2842858780F00B7292E /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		012886792873288C0093A3FC /* EventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsService.swift; sourceTree = "<group>"; };
 		0128867B287329A30093A3FC /* EventsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceProtocol.swift; sourceTree = "<group>"; };
+		0128867E287337F40093A3FC /* EventsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceMock.swift; sourceTree = "<group>"; };
 		0133F57228557BA800CF99F6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0148103E28528FF3004BDE8A /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		015DFFBB285A8DC200C8EC32 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				01A4C9ED285118E30000B1AA /* Event_CountdownTests.swift */,
+				0128867E287337F40093A3FC /* EventsServiceMock.swift */,
 			);
 			path = "Event CountdownTests";
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0128867F287337F40093A3FC /* EventsServiceMock.swift in Sources */,
 				01A4C9EE285118E30000B1AA /* Event_CountdownTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

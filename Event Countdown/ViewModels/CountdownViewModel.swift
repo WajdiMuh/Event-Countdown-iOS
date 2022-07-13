@@ -19,7 +19,7 @@ class CountdownViewModel: ObservableObject{
     
     func getlatestevent() async throws {
         do{
-            let latestevent:Event =  try await eventsservice.getlatestevent()
+            let latestevent:Event? =  try await eventsservice.getlatestevent()
             DispatchQueue.main.async(){
                 self.event = latestevent
                 self.receivedevent = nil
