@@ -8,7 +8,7 @@
 import Foundation
 
 final class EventsService : EventsServiceProtocol {
-    let baseurl:String = "https://eventcountdown.herokuapp.com"
+    let baseurl:String = "https://eventcountdown.ddnsfree.com"
     
     func getlatestevent() async throws -> Event? {
         guard let url = URL(string: baseurl + "/getlatestevent") else {
